@@ -77,10 +77,11 @@ struct SettingsView: View {
                 }
 
                 // Privacy section
-                Section("Privacy") {
+                Section {
                     Toggle("Manual Only Mode", isOn: manualOnlyBinding)
-                }
-                footer: {
+                } header: {
+                    Text("Privacy")
+                } footer: {
                     Text("When enabled, all automation is disabled and you must manually check in.")
                         .font(.caption)
                 }

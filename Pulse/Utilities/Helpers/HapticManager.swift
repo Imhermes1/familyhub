@@ -9,7 +9,7 @@ class HapticManager {
     private let impactMedium = UIImpactFeedbackGenerator(style: .medium)
     private let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
     private let notification = UINotificationFeedbackGenerator()
-    private let selection = UISelectionFeedbackGenerator()
+    private let selectionGenerator = UISelectionFeedbackGenerator()
 
     private init() {
         // Prepare generators
@@ -17,7 +17,7 @@ class HapticManager {
         impactMedium.prepare()
         impactHeavy.prepare()
         notification.prepare()
-        selection.prepare()
+        selectionGenerator.prepare()
     }
 
     // MARK: - Impact Feedback
@@ -58,7 +58,7 @@ class HapticManager {
     // MARK: - Selection Feedback
 
     func selection() {
-        selection.selectionChanged()
+        selectionGenerator.selectionChanged()
     }
 
     // MARK: - Pulse-Specific Feedback
@@ -73,7 +73,7 @@ class HapticManager {
 
     /// Haptic for task completion
     func taskCompleted() {
-        selection.selectionChanged()
+        selectionGenerator.selectionChanged()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.impactLight.impactOccurred()
         }

@@ -2,7 +2,7 @@ import Foundation
 
 /// Handles reading and writing data to the App Group container for widget access
 class AppGroupStore {
-    private let groupIdentifier = "group.com.yourcompany.pulse"
+    private let groupIdentifier = "io.lumoralabs"
     private let snapshotFileName = "PulseSnapshot.json"
     private let lastRefreshFileName = "LastUpdate.txt"
 

@@ -1,13 +1,22 @@
 import Foundation
 import SwiftData
 import Combine
+#if !WIDGET_EXTENSION
+import WidgetKit
+#endif
 
 @MainActor
 class PulseDataManager: ObservableObject {
     static let shared = PulseDataManager()
 
+    #if DEBUG
+    private let isDebugBypass = true
+    #else
+    private let isDebugBypass = false
+    #endif
+
     // Dependencies
-    private(set) var supabaseClient: SupabaseClient!
+    private(set) var supabaseClient: SupabaseClient?
     private(set) var modelContext: ModelContext!
     private(set) var appGroupStore: AppGroupStore!
     private(set) var realtimeManager: RealtimeManager!
@@ -26,13 +35,20 @@ class PulseDataManager: ObservableObject {
     func initialize(modelContext: ModelContext) async {
         self.modelContext = modelContext
         self.supabaseClient = SupabaseClient()
-        self.appGroupStore = AppGroupStore()
+        self.appGroupStore = isDebugBypass ? nil : AppGroupStore()
 
         // Load current user and group from SwiftData
         await loadLocalData()
 
+        // Dev stub data to bypass auth/backend while testing UI
+        #if DEBUG
+        if currentUser == nil || currentGroup == nil {
+            seedDevUserAndGroup()
+        }
+        #endif
+
         // Initialize realtime subscriptions if authenticated
-        if let currentUser = currentUser, let currentGroup = currentGroup {
+        if let currentUser = currentUser, let currentGroup = currentGroup, let supabaseClient = supabaseClient {
             self.realtimeManager = RealtimeManager(
                 supabaseClient: supabaseClient,
                 groupID: currentGroup.id,
@@ -50,10 +66,33 @@ class PulseDataManager: ObservableObject {
     // MARK: - Authentication
 
     func isUserAuthenticated() async -> Bool {
+        #if DEBUG
+        return true
+        #endif
         do {
+            guard let supabaseClient else { return false }
             return try await supabaseClient.isAuthenticated()
         } catch {
             return false
+        }
+    }
+
+    // MARK: - Dev Seed
+
+    private func seedDevUserAndGroup() {
+        let user = UserProfile(displayName: "Test User", emoji: "😀")
+        let group = Group(name: "Lumora Test", inviteCode: "DEV123", memberCount: 3)
+
+        modelContext.insert(user)
+        modelContext.insert(group)
+
+        currentUser = user
+        currentGroup = group
+
+        do {
+            try modelContext.save()
+        } catch {
+            print("Failed to seed dev data: \(error)")
         }
     }
 
@@ -62,11 +101,11 @@ class PulseDataManager: ObservableObject {
     }
 
     func signIn(email: String) async throws {
-        try await supabaseClient.signInWithMagicLink(email: email)
+        try await supabaseClient?.signInWithMagicLink(email: email)
     }
 
     func signOut() async throws {
-        try await supabaseClient.signOut()
+        try await supabaseClient?.signOut()
         currentUser = nil
         currentGroup = nil
         statuses = []
@@ -77,7 +116,7 @@ class PulseDataManager: ObservableObject {
     // MARK: - Profile Setup
 
     func createUserProfile(displayName: String, emoji: String) async throws {
-        let authUserID = try await supabaseClient.getCurrentUserID()
+        let authUserID = try await supabaseClient?.getCurrentUserID() ?? UUID()
 
         let profile = UserProfile(
             authUserID: authUserID,
@@ -89,12 +128,22 @@ class PulseDataManager: ObservableObject {
         try modelContext.save()
 
         // Sync to Supabase
-        try await UserAPI(client: supabaseClient).createUser(profile: profile)
+        if let supabaseClient {
+            try await UserAPI(client: supabaseClient).createUser(profile: profile)
+        }
 
         currentUser = profile
     }
 
     func createGroup(name: String) async throws {
+        if isDebugBypass && currentUser == nil {
+            seedDevUserAndGroup()
+        }
+
+        if isDebugBypass && currentUser == nil {
+            seedDevUserAndGroup()
+        }
+
         guard let currentUser = currentUser else {
             throw PulseError.userNotAuthenticated
         }
@@ -112,17 +161,24 @@ class PulseDataManager: ObservableObject {
         try modelContext.save()
 
         // Sync to Supabase
-        try await GroupAPI(client: supabaseClient).createGroup(group: group, creatorID: currentUser.id)
+        if let supabaseClient {
+            try await GroupAPI(client: supabaseClient).createGroup(group: group, creatorID: currentUser.id)
+        }
 
         currentGroup = group
     }
 
     func joinGroup(inviteCode: String) async throws {
+        if isDebugBypass && currentUser == nil {
+            seedDevUserAndGroup()
+        }
+
         guard let currentUser = currentUser else {
             throw PulseError.userNotAuthenticated
         }
 
         // Fetch group from Supabase
+        guard let supabaseClient else { return }
         let group = try await GroupAPI(client: supabaseClient).joinGroup(inviteCode: inviteCode, userID: currentUser.id)
 
         modelContext.insert(group)
@@ -134,6 +190,10 @@ class PulseDataManager: ObservableObject {
     // MARK: - Check-in
 
     func checkIn(type: StatusType, trigger: TriggerType = .manual, locationName: String? = nil) async throws {
+        if isDebugBypass && (currentUser == nil || currentGroup == nil) {
+            seedDevUserAndGroup()
+        }
+
         guard let currentUser = currentUser, let currentGroup = currentGroup else {
             throw PulseError.userNotAuthenticated
         }
@@ -163,8 +223,10 @@ class PulseDataManager: ObservableObject {
 
         do {
             // Sync to Supabase
-            let serverID = try await StatusAPI(client: supabaseClient).createStatus(status: status)
-            status.serverID = serverID
+            if let supabaseClient {
+                let serverID = try await StatusAPI(client: supabaseClient).createStatus(status: status)
+                status.serverID = serverID
+            }
             try modelContext.save()
 
             // Track analytics
@@ -204,8 +266,10 @@ class PulseDataManager: ObservableObject {
         updateWidget()
 
         do {
-            let serverID = try await TaskAPI(client: supabaseClient).createTask(task: task)
-            task.serverID = serverID
+            if let supabaseClient {
+                let serverID = try await TaskAPI(client: supabaseClient).createTask(task: task)
+                task.serverID = serverID
+            }
             try modelContext.save()
 
             PostHogManager.shared.track("task_added", properties: [
@@ -219,6 +283,10 @@ class PulseDataManager: ObservableObject {
     }
 
     func toggleTask(_ task: TaskItem) async throws {
+        if isDebugBypass && currentUser == nil {
+            seedDevUserAndGroup()
+        }
+
         guard let currentUser = currentUser else {
             throw PulseError.userNotAuthenticated
         }
@@ -231,7 +299,9 @@ class PulseDataManager: ObservableObject {
         updateWidget()
 
         do {
-            try await TaskAPI(client: supabaseClient).updateTask(task: task)
+            if let supabaseClient {
+                try await TaskAPI(client: supabaseClient).updateTask(task: task)
+            }
 
             PostHogManager.shared.track(
                 task.completed ? "task_completed" : "task_uncompleted",
@@ -265,6 +335,7 @@ class PulseDataManager: ObservableObject {
         guard let currentGroup = currentGroup else { return }
 
         do {
+            guard let supabaseClient else { return }
             let fetchedStatuses = try await StatusAPI(client: supabaseClient).fetchGroupStatuses(groupID: currentGroup.id)
 
             // Merge with local data
@@ -294,6 +365,7 @@ class PulseDataManager: ObservableObject {
         guard let currentGroup = currentGroup else { return }
 
         do {
+            guard let supabaseClient else { return }
             let fetchedTasks = try await TaskAPI(client: supabaseClient).fetchGroupTasks(groupID: currentGroup.id)
 
             for fetchedTask in fetchedTasks {
@@ -321,9 +393,8 @@ class PulseDataManager: ObservableObject {
     // MARK: - Widget Update
 
     func updateWidget() {
-        guard let currentUser = currentUser, let currentGroup = currentGroup else {
-            return
-        }
+        // Skip widget writes in debug when app group entitlement isn't present
+        guard !isDebugBypass, let currentUser = currentUser, let currentGroup = currentGroup else { return }
 
         // Create snapshot for widget
         let snapshot = PulseSnapshot(
@@ -340,7 +411,6 @@ class PulseDataManager: ObservableObject {
 
             // Reload widget timelines
             #if !WIDGET_EXTENSION
-            import WidgetKit
             WidgetCenter.shared.reloadAllTimelines()
             #endif
         } catch {
@@ -362,14 +432,16 @@ class PulseDataManager: ObservableObject {
             currentGroup = groups.first
 
             if let group = currentGroup {
+                let groupID = group.id
+
                 let statusDescriptor = FetchDescriptor<PulseStatus>(
-                    predicate: #Predicate { $0.groupID == group.id },
+                    predicate: #Predicate { $0.groupID == groupID },
                     sortBy: [SortDescriptor(\PulseStatus.createdAt, order: .reverse)]
                 )
                 statuses = try modelContext.fetch(statusDescriptor)
 
                 let taskDescriptor = FetchDescriptor<TaskItem>(
-                    predicate: #Predicate { $0.groupID == group.id }
+                    predicate: #Predicate { $0.groupID == groupID }
                 )
                 tasks = try modelContext.fetch(taskDescriptor)
             }

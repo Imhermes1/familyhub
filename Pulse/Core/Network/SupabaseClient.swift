@@ -5,18 +5,23 @@ import Foundation
 class SupabaseClient {
     private let supabaseURL: String
     private let supabaseAnonKey: String
+    private let isStubClient: Bool
 
     // TODO: Initialize actual Supabase client
     // private let client: SupabaseClient
 
     init() {
-        // Load from plist
-        guard let config = SupabaseConfig.load() else {
-            fatalError("Supabase configuration not found")
+        // Load from plist; in dev fallback to empty strings to avoid crashes
+        if let config = SupabaseConfig.load() {
+            self.supabaseURL = config.url
+            self.supabaseAnonKey = config.anonKey
+            self.isStubClient = false
+        } else {
+            self.supabaseURL = ""
+            self.supabaseAnonKey = ""
+            self.isStubClient = true
+            print("Warning: Supabase configuration not found; using stub client")
         }
-
-        self.supabaseURL = config.url
-        self.supabaseAnonKey = config.anonKey
 
         // TODO: Initialize Supabase client
         // self.client = SupabaseClient(supabaseURL: supabaseURL, supabaseKey: supabaseAnonKey)
@@ -27,7 +32,7 @@ class SupabaseClient {
     func isAuthenticated() async throws -> Bool {
         // TODO: Implement with Supabase Auth
         // return client.auth.session != nil
-        return false
+        return isStubClient ? true : false
     }
 
     func signInWithMagicLink(email: String) async throws {

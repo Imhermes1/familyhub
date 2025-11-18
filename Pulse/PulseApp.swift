@@ -20,8 +20,7 @@ struct PulseApp: App {
 
             let modelConfiguration = ModelConfiguration(
                 schema: schema,
-                isStoredInMemoryOnly: false,
-                groupContainer: .identifier("group.com.yourcompany.pulse")
+                isStoredInMemoryOnly: false
             )
 
             modelContainer = try ModelContainer(

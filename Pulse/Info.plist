@@ -22,23 +22,21 @@
     <string>1</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
-    <key>UIApplicationSceneManifest</key>
-    <dict>
-        <key>UIApplicationSupportsMultipleScenes</key>
-        <false/>
-        <key>UISceneConfigurations</key>
-        <dict>
-            <key>UIWindowSceneSessionRoleApplication</key>
-            <array>
-                <dict>
-                    <key>UISceneConfigurationName</key>
-                    <string>Default Configuration</string>
-                    <key>UISceneDelegateClassName</key>
-                    <string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-                </dict>
-            </array>
-        </dict>
-    </dict>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
     <key>UILaunchScreen</key>
     <dict>
         <key>UIColorName</key>
@@ -99,14 +97,14 @@
     </dict>
 
     <!-- User Activity Types -->
-    <key>NSUserActivityTypes</key>
-    <array>
-        <string>com.yourcompany.pulse.checkin</string>
-        <string>com.yourcompany.pulse.viewstatus</string>
-    </array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>io.lumoralabs.pulse.checkin</string>
+		<string>io.lumoralabs.pulse.viewstatus</string>
+	</array>
 
     <!-- Minimum OS Version -->
     <key>MinimumOSVersion</key>
-    <string>18.0</string>
+    <string>26.0</string>
 </dict>
 </plist>

@@ -5,8 +5,14 @@ struct RootView: View {
     @State private var isAuthenticated = false
     @State private var hasCompletedOnboarding = false
 
+    #if DEBUG
+    private let forceSkipAuth = true
+    #else
+    private let forceSkipAuth = false
+    #endif
+
     var body: some View {
-        Group {
+        SwiftUI.Group {
             if !isAuthenticated {
                 WelcomeView()
             } else if !hasCompletedOnboarding {
@@ -16,7 +22,12 @@ struct RootView: View {
             }
         }
         .onAppear {
-            checkAuthState()
+            if forceSkipAuth {
+                isAuthenticated = true
+                hasCompletedOnboarding = true
+            } else {
+                checkAuthState()
+            }
         }
     }
 
