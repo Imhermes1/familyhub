@@ -27,6 +27,7 @@ class PulseDataManager: ObservableObject {
     @Published var statuses: [PulseStatus] = []
     @Published var tasks: [TaskItem] = []
     @Published var notes: [Note] = []
+    @Published var voiceMessages: [VoiceMessageModel] = []
     @Published var isLoading = false
     @Published var error: Error?
 
@@ -318,6 +319,103 @@ class PulseDataManager: ObservableObject {
         }
     }
 
+    // MARK: - Voice Messages
+
+    func sendVoiceMessage(_ message: VoiceMessageModel) async throws {
+        guard let currentUser = currentUser, let currentGroup = currentGroup else {
+            throw PulseError.userNotAuthenticated
+        }
+
+        // Save locally first (optimistic update)
+        modelContext.insert(message)
+        voiceMessages.insert(message, at: 0)
+        try modelContext.save()
+
+        // Upload audio file
+        if let localPath = message.localFileURL, let url = URL(string: localPath) {
+            Task {
+                do {
+                    message.uploadStatus = .uploading
+                    try modelContext.save()
+
+                    // Upload to storage
+                    let remotePath = try await AudioUploadManager.shared.upload(
+                        id: message.id,
+                        fileURL: url,
+                        groupID: currentGroup.id
+                    )
+
+                    message.audioURL = remotePath
+                    message.uploadStatus = .completed
+                    try modelContext.save()
+
+                    // TODO: Sync to Supabase database
+                    // if let supabaseClient {
+                    //     let serverID = try await VoiceMessageAPI(client: supabaseClient).create(message: message)
+                    //     message.serverID = serverID
+                    // }
+
+                    // Track analytics
+                    PostHogManager.shared.track(.voiceMessageSent, properties: [
+                        "duration": message.duration,
+                        "has_transcript": message.transcript != nil,
+                        "recipient_count": message.recipientIDs.count
+                    ])
+                } catch {
+                    message.uploadStatus = .failed
+                    try? modelContext.save()
+                    print("Voice message upload failed: \(error)")
+                }
+            }
+        }
+    }
+
+    func deleteVoiceMessage(_ message: VoiceMessageModel) throws {
+        // Delete local file
+        message.deleteLocalFile()
+
+        // Remove from list
+        voiceMessages.removeAll { $0.id == message.id }
+
+        // Delete from SwiftData
+        modelContext.delete(message)
+        try modelContext.save()
+
+        // TODO: Delete from Supabase
+    }
+
+    func markVoiceMessageAsPlayed(_ message: VoiceMessageModel) throws {
+        message.isPlayed = true
+        message.playedAt = Date()
+        try modelContext.save()
+
+        // TODO: Sync to Supabase
+    }
+
+    // MARK: - Notes
+
+    func addNote(content: String) async throws {
+        guard let currentUser = currentUser, let currentGroup = currentGroup else {
+            throw PulseError.userNotAuthenticated
+        }
+
+        let note = Note(
+            groupID: currentGroup.id,
+            createdByID: currentUser.id,
+            content: content
+        )
+
+        modelContext.insert(note)
+        notes.append(note)
+        try modelContext.save()
+
+        // TODO: Sync to Supabase
+
+        PostHogManager.shared.track(.noteCreated, properties: [
+            "content_length": content.count
+        ])
+    }
+
     // MARK: - Sync
 
     func syncFromSupabase() async throws {
@@ -327,6 +425,7 @@ class PulseDataManager: ObservableObject {
         await syncStatusesFromSupabase()
         await syncTasksFromSupabase()
         await syncNotesFromSupabase()
+        await syncVoiceMessagesFromSupabase()
 
         updateWidget()
     }
@@ -390,6 +489,28 @@ class PulseDataManager: ObservableObject {
         // Implementation omitted for brevity
     }
 
+    private func syncVoiceMessagesFromSupabase() async {
+        guard let currentGroup = currentGroup else { return }
+
+        // TODO: Implement when Supabase SDK is integrated
+        // do {
+        //     guard let supabaseClient else { return }
+        //     let fetchedMessages = try await VoiceMessageAPI(client: supabaseClient).fetchGroupMessages(groupID: currentGroup.id)
+        //
+        //     for fetchedMessage in fetchedMessages {
+        //         if !voiceMessages.contains(where: { $0.serverID == fetchedMessage.serverID }) {
+        //             modelContext.insert(fetchedMessage)
+        //             voiceMessages.append(fetchedMessage)
+        //         }
+        //     }
+        //
+        //     voiceMessages.sort { $0.createdAt > $1.createdAt }
+        //     try modelContext.save()
+        // } catch {
+        //     self.error = error
+        // }
+    }
+
     // MARK: - Widget Update
 
     func updateWidget() {
@@ -444,6 +565,12 @@ class PulseDataManager: ObservableObject {
                     predicate: #Predicate { $0.groupID == groupID }
                 )
                 tasks = try modelContext.fetch(taskDescriptor)
+
+                let voiceMessageDescriptor = FetchDescriptor<VoiceMessageModel>(
+                    predicate: #Predicate { $0.groupID == groupID },
+                    sortBy: [SortDescriptor(\VoiceMessageModel.createdAt, order: .reverse)]
+                )
+                voiceMessages = try modelContext.fetch(voiceMessageDescriptor)
             }
         } catch {
             print("Failed to load local data: \(error)")

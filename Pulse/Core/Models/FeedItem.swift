@@ -46,7 +46,7 @@ enum FeedItemType: Equatable {
     case task(TaskItem)
     case note(Note)
     case photo(PhotoShare)      // Future Phase 3
-    case voiceMessage(VoiceMessage) // Future Phase 2
+    case voiceMessage(VoiceMessageModel) // Phase 2 - Now implemented!
 
     // Helper to get display icon
     var icon: String {
@@ -150,41 +150,6 @@ enum RetentionPolicy: String, Codable, Equatable {
     }
 }
 
-// VoiceMessage - Phase 2
-struct VoiceMessage: Identifiable, Equatable {
-    let id: UUID
-    var groupID: UUID
-    var senderID: UUID
-    var recipientIDs: [UUID]  // Up to 4-5 recipients for small group PTT
-    var audioURL: String?
-    var duration: TimeInterval
-    var transcript: String?
-    var createdAt: Date
-    var isPlayed: Bool
-
-    init(
-        id: UUID = UUID(),
-        groupID: UUID,
-        senderID: UUID,
-        recipientIDs: [UUID] = [],
-        audioURL: String? = nil,
-        duration: TimeInterval = 0,
-        transcript: String? = nil,
-        createdAt: Date = Date(),
-        isPlayed: Bool = false
-    ) {
-        self.id = id
-        self.groupID = groupID
-        self.senderID = senderID
-        self.recipientIDs = recipientIDs
-        self.audioURL = audioURL
-        self.duration = duration
-        self.transcript = transcript
-        self.createdAt = createdAt
-        self.isPlayed = isPlayed
-    }
-}
-
 // MARK: - Feed Item Extensions
 
 extension FeedItem {
@@ -237,7 +202,7 @@ extension FeedItem {
         )
     }
 
-    static func fromVoiceMessage(_ voice: VoiceMessage, userName: String?, userEmoji: String?) -> FeedItem {
+    static func fromVoiceMessage(_ voice: VoiceMessageModel, userName: String?, userEmoji: String?) -> FeedItem {
         FeedItem(
             id: voice.id,
             type: .voiceMessage(voice),

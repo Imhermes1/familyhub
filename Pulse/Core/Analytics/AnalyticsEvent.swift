@@ -16,6 +16,14 @@ enum AnalyticsEvent {
     case groupCreated(groupID: String, memberCount: Int)
     case groupJoined(groupID: String, inviteCode: String)
     case noteCreated(noteType: String)
+    case voiceRecordingStarted
+    case voiceRecordingStopped(duration: TimeInterval)
+    case voiceRecordingCancelled
+    case voiceMessageSent(duration: TimeInterval, hasTranscript: Bool, recipientCount: Int)
+    case voiceMessageTranscribed(wordCount: Int, confidence: Double)
+    case voiceMessagePlayed(messageID: String, duration: TimeInterval)
+    case voiceMessageCompleted(messageID: String)
+    case voiceMessageUploaded(messageID: String, fileSize: Int64)
     case screenViewed(screenName: String)
     case errorOccurred(error: String, context: String)
 
@@ -49,6 +57,22 @@ enum AnalyticsEvent {
             return "group_joined"
         case .noteCreated:
             return "note_created"
+        case .voiceRecordingStarted:
+            return "voice_recording_started"
+        case .voiceRecordingStopped:
+            return "voice_recording_stopped"
+        case .voiceRecordingCancelled:
+            return "voice_recording_cancelled"
+        case .voiceMessageSent:
+            return "voice_message_sent"
+        case .voiceMessageTranscribed:
+            return "voice_message_transcribed"
+        case .voiceMessagePlayed:
+            return "voice_message_played"
+        case .voiceMessageCompleted:
+            return "voice_message_completed"
+        case .voiceMessageUploaded:
+            return "voice_message_uploaded"
         case .screenViewed:
             return "screen_viewed"
         case .errorOccurred:
@@ -133,6 +157,43 @@ enum AnalyticsEvent {
 
         case .noteCreated(let noteType):
             return ["note_type": noteType]
+
+        case .voiceRecordingStarted:
+            return [:]
+
+        case .voiceRecordingStopped(let duration):
+            return ["duration": duration]
+
+        case .voiceRecordingCancelled:
+            return [:]
+
+        case .voiceMessageSent(let duration, let hasTranscript, let recipientCount):
+            return [
+                "duration": duration,
+                "has_transcript": hasTranscript,
+                "recipient_count": recipientCount
+            ]
+
+        case .voiceMessageTranscribed(let wordCount, let confidence):
+            return [
+                "word_count": wordCount,
+                "confidence": confidence
+            ]
+
+        case .voiceMessagePlayed(let messageID, let duration):
+            return [
+                "message_id": messageID,
+                "duration": duration
+            ]
+
+        case .voiceMessageCompleted(let messageID):
+            return ["message_id": messageID]
+
+        case .voiceMessageUploaded(let messageID, let fileSize):
+            return [
+                "message_id": messageID,
+                "file_size": fileSize
+            ]
 
         case .screenViewed(let screenName):
             return ["screen_name": screenName]

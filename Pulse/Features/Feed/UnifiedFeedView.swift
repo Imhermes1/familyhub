@@ -11,6 +11,7 @@ struct UnifiedFeedView: View {
     @State private var showingQuickCheckIn = false
     @State private var showingQuickNote = false
     @State private var showingQuickTask = false
+    @State private var showingVoiceRecord = false
     @State private var showingSettings = false
     @State private var selectedMember: UUID?
 
@@ -54,7 +55,8 @@ struct UnifiedFeedView: View {
                 FloatingActionButton(
                     onCheckIn: { showingQuickCheckIn = true },
                     onNote: { showingQuickNote = true },
-                    onTask: { showingQuickTask = true }
+                    onTask: { showingQuickTask = true },
+                    onVoice: { showingVoiceRecord = true }
                 )
                 .padding(.trailing, DesignSystem.Spacing.md)
                 .padding(.bottom, DesignSystem.Spacing.md)
@@ -84,6 +86,9 @@ struct UnifiedFeedView: View {
             }
             .sheet(isPresented: $showingQuickTask) {
                 QuickTaskSheet()
+            }
+            .sheet(isPresented: $showingVoiceRecord) {
+                VoiceRecordSheet()
             }
             .sheet(isPresented: $showingSettings) {
                 SettingsViewRedesign()
@@ -144,12 +149,15 @@ struct UnifiedFeedView: View {
                 userEmoji: item.userEmoji
             )
 
+        case .voiceMessage(let message):
+            VoiceMessageCard(
+                message: message,
+                userName: item.userName,
+                userEmoji: item.userEmoji
+            )
+
         case .photo:
             // TODO: Phase 3 - PhotoCard
-            EmptyView()
-
-        case .voiceMessage:
-            // TODO: Phase 2 - VoiceMessageCard
             EmptyView()
         }
     }

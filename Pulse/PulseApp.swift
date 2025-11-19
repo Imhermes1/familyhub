@@ -15,7 +15,8 @@ struct PulseApp: App {
                 Group.self,
                 PulseStatus.self,
                 TaskItem.self,
-                Note.self
+                Note.self,
+                VoiceMessageModel.self
             ])
 
             let modelConfiguration = ModelConfiguration(

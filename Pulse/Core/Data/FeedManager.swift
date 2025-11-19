@@ -81,9 +81,9 @@ class FeedManager: ObservableObject {
     private func setupObservers() {
         // Observe data manager changes and refresh feed
         dataManager.$statuses
-            .combineLatest(dataManager.$tasks, dataManager.$notes)
+            .combineLatest(dataManager.$tasks, dataManager.$notes, dataManager.$voiceMessages)
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
-            .sink { [weak self] _, _, _ in
+            .sink { [weak self] _, _, _, _ in
                 self?.refreshFeed()
             }
             .store(in: &cancellables)
@@ -133,7 +133,16 @@ class FeedManager: ObservableObject {
             ))
         }
 
-        // TODO Phase 2: Add voice messages
+        // Convert all voice messages to feed items
+        for voiceMessage in dataManager.voiceMessages {
+            let user = userLookup[voiceMessage.senderID]
+            items.append(.fromVoiceMessage(
+                voiceMessage,
+                userName: user?.name,
+                userEmoji: user?.emoji
+            ))
+        }
+
         // TODO Phase 3: Add photo shares
 
         // Sort by time (newest first)
