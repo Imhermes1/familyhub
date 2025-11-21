@@ -1,7 +1,7 @@
 require 'xcodeproj'
 require 'pathname'
 base = Pathname(File.expand_path('.'))
-proj = Xcodeproj::Project.open('Pulse.xcodeproj')
+proj = Xcodeproj::Project.open('Family Hub.xcodeproj')
 missing = []
 proj.files.each do |f|
   next unless f.path

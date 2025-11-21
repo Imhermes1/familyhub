@@ -1,11 +1,10 @@
 require 'xcodeproj'
 require 'pathname'
 
-project_path = 'Pulse.xcodeproj'
+project_path = 'Family Hub.xcodeproj'
 proj = Xcodeproj::Project.new(project_path)
 
-proj.root_object.name = 'Pulse'
-app_target = proj.new_target(:application, 'Pulse', :ios, '18.0')
+app_target = proj.new_target(:application, 'Family Hub', :ios, '18.0')
 base = Pathname(File.expand_path(Dir.pwd))
 
 def add_files_to_target(proj, group, base_path, target, base_dir)
@@ -29,7 +28,7 @@ pulse_group = proj.new_group('Pulse', 'Pulse')
 add_files_to_target(proj, pulse_group, 'Pulse', app_target, base)
 
 app_target.build_configurations.each do |config|
-  config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'io.lumoralabs.pulse'
+  config.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = 'com.example.familyhub'
   config.build_settings['INFOPLIST_FILE'] = 'Pulse/Info.plist'
   config.build_settings['CODE_SIGN_ENTITLEMENTS'] = 'Pulse/Pulse.entitlements'
   config.build_settings['SWIFT_VERSION'] = '5.0'
@@ -38,4 +37,4 @@ app_target.build_configurations.each do |config|
 end
 
 proj.save
-puts "Generated #{project_path} with target 'Pulse'"
+puts "Generated #{project_path} with target 'Family Hub'"

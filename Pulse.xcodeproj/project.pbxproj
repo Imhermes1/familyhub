@@ -242,7 +242,7 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 2610;
 			};
-			buildConfigurationList = 21D7B19552E50C8159CCE389 /* Build configuration list for PBXProject "Family Hub" */;
+			buildConfigurationList = 21D7B19552E50C8159CCE389 /* Build configuration list for PBXProject "Pulse" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -250,6 +250,7 @@
 				en,
 				Base,
 			);
+			name = Pulse;
 			mainGroup = F5C626A1E6D53DB97FD9A8C9;
 			packageReferences = (
 				0BA60D572ECC69C7004A8F0C /* XCRemoteSwiftPackageReference "posthog-ios" */,
@@ -513,7 +514,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21D7B19552E50C8159CCE389 /* Build configuration list for PBXProject "Family Hub" */ = {
+		21D7B19552E50C8159CCE389 /* Build configuration list for PBXProject "Pulse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				962E4CE805D0BAAF000AD408 /* Debug */,
