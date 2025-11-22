@@ -14,7 +14,7 @@ struct HeroStatusCard: View {
     }
 
     var body: some View {
-        Card.prominent {
+        ProminentCard {
             VStack(alignment: .leading, spacing: DesignSystem.Spacing.md) {
                 // Group header
                 HStack {
@@ -64,7 +64,7 @@ struct HeroStatusCard: View {
 
     // MARK: - Data Preparation
 
-    private var memberStatuses: [MemberStatus] {
+    private var memberStatuses: [FeedMemberStatus] {
         guard let currentUser = dataManager.currentUser else {
             return []
         }
@@ -76,9 +76,9 @@ struct HeroStatusCard: View {
             .first
 
         let isOnline = isRecentStatus(userStatus?.createdAt)
-        let location = userStatus?.locationName ?? userStatus?.statusType.displayName
+        let location = userStatus?.locationName ?? userStatus?.statusType.displayText
 
-        let memberStatus = MemberStatus(
+        let memberStatus = FeedMemberStatus(
             memberID: currentUser.id,
             emoji: currentUser.emoji,
             name: currentUser.displayName,
@@ -100,7 +100,7 @@ struct HeroStatusCard: View {
 
 // MARK: - Member Status
 
-struct MemberStatus {
+struct FeedMemberStatus {
     let memberID: UUID
     let emoji: String
     let name: String

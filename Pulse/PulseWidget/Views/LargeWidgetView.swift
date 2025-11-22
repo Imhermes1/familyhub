@@ -52,6 +52,7 @@ struct LargeWidgetView: View {
                 .fontWeight(.semibold)
 
             ForEach(entry.topTasks.prefix(3)) { task in
+#if WIDGET_EXTENSION
                 Button(intent: TickTaskIntent(taskID: task.id)) {
                     HStack {
                         Image(systemName: task.completed ? "checkmark.circle.fill" : "circle")
@@ -62,20 +63,47 @@ struct LargeWidgetView: View {
                         Spacer()
                     }
                 }
+#else
+                Button(action: {}) {
+                    HStack {
+                        Image(systemName: task.completed ? "checkmark.circle.fill" : "circle")
+                            .foregroundStyle(task.completed ? .green : .secondary)
+                        Text(task.title)
+                            .font(.subheadline)
+                            .strikethrough(task.completed)
+                        Spacer()
+                    }
+                }
+#endif
             }
 
             Spacer()
 
             // Actions
             HStack(spacing: 12) {
+#if WIDGET_EXTENSION
                 Button(intent: MarkSafeIntent()) {
                     Label("I am here", systemImage: "location.fill")
                         .font(.caption)
                 }
+
                 Spacer()
+
                 Button(intent: RefreshPulseIntent()) {
                     Image(systemName: "arrow.clockwise")
                 }
+#else
+                Button(action: {}) {
+                    Label("I am here", systemImage: "location.fill")
+                        .font(.caption)
+                }
+
+                Spacer()
+
+                Button(action: {}) {
+                    Image(systemName: "arrow.clockwise")
+                }
+#endif
             }
         }
         .padding()

@@ -106,7 +106,7 @@ struct QuickNoteSheet: View {
                 try await dataManager.addNote(content: trimmedContent)
 
                 // Track analytics
-                PostHogManager.shared.track(.noteCreated, properties: [
+                PostHogManager.shared.track("note_created", properties: [
                     "length": trimmedContent.count
                 ])
 

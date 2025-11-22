@@ -78,10 +78,12 @@ class AudioUploadManager: ObservableObject {
             uploadProgress[id] = 1.0
 
             // Track analytics
-            PostHogManager.shared.track(.voiceMessageUploaded, properties: [
-                "message_id": id.uuidString,
-                "file_size": fileSize
-            ])
+            PostHogManager.shared.track(
+                .voiceMessageUploaded(
+                    messageID: id.uuidString,
+                    fileSize: Int64(fileSize)
+                )
+            )
 
             return remotePath
         } catch {

@@ -77,11 +77,11 @@ struct QuickCheckInSheet: View {
                 }
 
                 StatusTypeButton(
-                    type: .on_the_way,
-                    isSelected: selectedType == .on_the_way
+                    type: .onTheWay,
+                    isSelected: selectedType == .onTheWay
                 ) {
                     withAnimation(DesignSystem.Animation.spring) {
-                        selectedType = .on_the_way
+                        selectedType = .onTheWay
                     }
                 }
             }
@@ -121,7 +121,7 @@ struct QuickCheckInSheet: View {
                 )
 
                 // Track analytics
-                PostHogManager.shared.track(.checkInCreated, properties: [
+                PostHogManager.shared.track("check_in_performed", properties: [
                     "type": selectedType.rawValue,
                     "trigger": "manual",
                     "has_location": !locationName.isEmpty
@@ -166,7 +166,7 @@ struct StatusTypeButton: View {
 
                 // Text
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(type.displayName)
+                    Text(type.displayText)
                         .font(DesignSystem.Typography.body(.semibold))
                         .foregroundColor(DesignSystem.Colors.label)
 
@@ -205,7 +205,7 @@ extension StatusType {
             return DesignSystem.Colors.success
         case .leaving:
             return DesignSystem.Colors.warning
-        case .on_the_way:
+        case .onTheWay:
             return DesignSystem.Colors.info
         case .pulse:
             return DesignSystem.Colors.primary
@@ -218,7 +218,7 @@ extension StatusType {
             return "I've arrived at a location"
         case .leaving:
             return "I'm leaving a location"
-        case .on_the_way:
+        case .onTheWay:
             return "I'm heading somewhere"
         case .pulse:
             return "Quick status update"

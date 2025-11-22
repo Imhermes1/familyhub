@@ -23,8 +23,8 @@ class FeedManager: ObservableObject {
 
     // MARK: - Initialization
 
-    init(dataManager: PulseDataManager = .shared) {
-        self.dataManager = dataManager
+    init(dataManager: PulseDataManager? = nil) {
+        self.dataManager = dataManager ?? PulseDataManager.shared
 
         // Setup observers for data changes
         setupObservers()
@@ -73,7 +73,7 @@ class FeedManager: ObservableObject {
 
     /// Get feed items for a specific user
     func getFeedItems(for userID: UUID) -> [FeedItem] {
-        feedItems.filtered(by: userID).sortedByTime()
+        feedItems.filter { $0.userID == userID }.sortedByTime()
     }
 
     // MARK: - Private Methods
@@ -115,7 +115,7 @@ class FeedManager: ObservableObject {
 
         // Convert all tasks to feed items
         for task in dataManager.tasks {
-            let user = userLookup[task.createdByID]
+            let user = userLookup[task.createdByUserID]
             items.append(.fromTask(
                 task,
                 userName: user?.name,
@@ -125,7 +125,7 @@ class FeedManager: ObservableObject {
 
         // Convert all notes to feed items
         for note in dataManager.notes {
-            let user = userLookup[note.createdByID]
+            let user = userLookup[note.userID]
             items.append(.fromNote(
                 note,
                 userName: user?.name,
@@ -154,7 +154,7 @@ class FeedManager: ObservableObject {
 
         // Filter by group
         if let groupID = selectedGroup {
-            items = items.filtered(by: groupID)
+            items = items.filter { $0.groupID == groupID }
         }
 
         // Filter by type

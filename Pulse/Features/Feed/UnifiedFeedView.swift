@@ -29,8 +29,8 @@ struct UnifiedFeedView: View {
                         HeroStatusCard()
                             .padding(.horizontal, DesignSystem.Spacing.screenPadding)
                             .padding(.top, DesignSystem.Spacing.xs)
-                            .onTapGesture { member in
-                                selectedMember = member
+                            .onTapGesture {
+                                selectedMember = dataManager.currentUser?.id
                             }
 
                         // Feed content

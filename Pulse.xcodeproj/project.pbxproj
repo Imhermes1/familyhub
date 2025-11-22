@@ -7,8 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0029139FA9532F4591F7A150 /* GroupSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC5BCF55A96B3F4321E7D1 /* GroupSummaryCard.swift */; };
-		031D1B4A5014764E82953E3B /* PulseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FAAF8501C3A9F2F0ADF81 /* PulseStatus.swift */; };
+		0B8E83E12ED12C6D00EAF7AB /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83C32ED12C6D00EAF7AB /* SmallWidgetView.swift */; };
+		0B8E83E22ED12C6D00EAF7AB /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E836C2ED12C6D00EAF7AB /* AnalyticsEvent.swift */; };
+		0B8E83E32ED12C6D00EAF7AB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83D02ED12C6D00EAF7AB /* NotificationManager.swift */; };
+		0B8E83E42ED12C6D00EAF7AB /* CheckInButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83AC2ED12C6D00EAF7AB /* CheckInButtonsView.swift */; };
+		0B8E83E52ED12C6D00EAF7AB /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E837F2ED12C6D00EAF7AB /* Group.swift */; };
+		0B8E83E62ED12C6D00EAF7AB /* GroupSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A12ED12C6D00EAF7AB /* GroupSwitcher.swift */; };
+		0B8E83E72ED12C6D00EAF7AB /* VoiceMessageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E839E2ED12C6D00EAF7AB /* VoiceMessageCard.swift */; };
+		0B8E83E82ED12C6D00EAF7AB /* QuickCheckInSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A52ED12C6D00EAF7AB /* QuickCheckInSheet.swift */; };
+		0B8E83E92ED12C6D00EAF7AB /* RefreshPulseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83BC2ED12C6D00EAF7AB /* RefreshPulseIntent.swift */; };
+		0B8E83EA2ED12C6D00EAF7AB /* PulseHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83B02ED12C6D00EAF7AB /* PulseHomeView.swift */; };
+		0B8E83EB2ED12C6D00EAF7AB /* PulseWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83C92ED12C6D00EAF7AB /* PulseWidgetEntry.swift */; };
+		0B8E83EC2ED12C6D00EAF7AB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83802ED12C6D00EAF7AB /* Note.swift */; };
+		0B8E83ED2ED12C6D00EAF7AB /* Color+Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83CB2ED12C6D00EAF7AB /* Color+Pulse.swift */; };
+		0B8E83EE2ED12C6D00EAF7AB /* LocationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E839B2ED12C6D00EAF7AB /* LocationCard.swift */; };
+		0B8E83EF2ED12C6D00EAF7AB /* TaskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E838B2ED12C6D00EAF7AB /* TaskAPI.swift */; };
+		0B8E83F02ED12C6D00EAF7AB /* PulseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83762ED12C6D00EAF7AB /* PulseDataManager.swift */; };
+		0B8E83F12ED12C6D00EAF7AB /* LargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83C12ED12C6D00EAF7AB /* LargeWidgetView.swift */; };
+		0B8E83F22ED12C6D00EAF7AB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83902ED12C6D00EAF7AB /* AvatarView.swift */; };
+		0B8E83F32ED12C6D00EAF7AB /* ManualCheckInSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83AE2ED12C6D00EAF7AB /* ManualCheckInSheet.swift */; };
+		0B8E83F42ED12C6D00EAF7AB /* AudioPlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83702ED12C6D00EAF7AB /* AudioPlaybackManager.swift */; };
+		0B8E83F52ED12C6D00EAF7AB /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E838A2ED12C6D00EAF7AB /* SupabaseClient.swift */; };
+		0B8E83F62ED12C6D00EAF7AB /* AudioCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E836F2ED12C6D00EAF7AB /* AudioCaptureManager.swift */; };
+		0B8E83F72ED12C6D00EAF7AB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83B42ED12C6D00EAF7AB /* SettingsView.swift */; };
+		0B8E83F82ED12C6D00EAF7AB /* VoiceRecordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A82ED12C6D00EAF7AB /* VoiceRecordSheet.swift */; };
+		0B8E83F92ED12C6D00EAF7AB /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83B72ED12C6D00EAF7AB /* NotesView.swift */; };
+		0B8E83FA2ED12C6D00EAF7AB /* HeroStatusCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A22ED12C6D00EAF7AB /* HeroStatusCard.swift */; };
+		0B8E83FB2ED12C6D00EAF7AB /* PulseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83812ED12C6D00EAF7AB /* PulseStatus.swift */; };
+		0B8E83FC2ED12C6D00EAF7AB /* PulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83DB2ED12C6D00EAF7AB /* PulseApp.swift */; };
+		0B8E83FD2ED12C6D00EAF7AB /* VoiceMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83842ED12C6D00EAF7AB /* VoiceMessageModel.swift */; };
+		0B8E83FE2ED12C6D00EAF7AB /* PulseTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83BF2ED12C6D00EAF7AB /* PulseTimelineProvider.swift */; };
+		0B8E83FF2ED12C6D00EAF7AB /* RealtimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83772ED12C6D00EAF7AB /* RealtimeManager.swift */; };
+		0B8E84002ED12C6D00EAF7AB /* StatusAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83892ED12C6D00EAF7AB /* StatusAPI.swift */; };
+		0B8E84012ED12C6D00EAF7AB /* PulseWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83C82ED12C6D00EAF7AB /* PulseWidgetBundle.swift */; };
+		0B8E84022ED12C6D00EAF7AB /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83752ED12C6D00EAF7AB /* FeedManager.swift */; };
+		0B8E84032ED12C6D00EAF7AB /* TaskCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E839D2ED12C6D00EAF7AB /* TaskCard.swift */; };
+		0B8E84042ED12C6D00EAF7AB /* CurrentModeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83B32ED12C6D00EAF7AB /* CurrentModeCard.swift */; };
+		0B8E84052ED12C6D00EAF7AB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83642ED12C6D00EAF7AB /* RootView.swift */; };
+		0B8E84062ED12C6D00EAF7AB /* UnifiedFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83AA2ED12C6D00EAF7AB /* UnifiedFeedView.swift */; };
+		0B8E84072ED12C6D00EAF7AB /* MarkSafeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83BB2ED12C6D00EAF7AB /* MarkSafeIntent.swift */; };
+		0B8E84082ED12C6D00EAF7AB /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83982ED12C6D00EAF7AB /* ProfileSetupView.swift */; };
+		0B8E84092ED12C6D00EAF7AB /* GroupJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83972ED12C6D00EAF7AB /* GroupJoinView.swift */; };
+		0B8E840A2ED12C6D00EAF7AB /* PulseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83C72ED12C6D00EAF7AB /* PulseWidget.swift */; };
+		0B8E840B2ED12C6D00EAF7AB /* NoteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E839C2ED12C6D00EAF7AB /* NoteCard.swift */; };
+		0B8E840C2ED12C6D00EAF7AB /* SettingsViewRedesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83B52ED12C6D00EAF7AB /* SettingsViewRedesign.swift */; };
+		0B8E840D2ED12C6D00EAF7AB /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83822ED12C6D00EAF7AB /* TaskItem.swift */; };
+		0B8E840E2ED12C6D00EAF7AB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83992ED12C6D00EAF7AB /* WelcomeView.swift */; };
+		0B8E840F2ED12C6D00EAF7AB /* PostHogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E836D2ED12C6D00EAF7AB /* PostHogManager.swift */; };
+		0B8E84102ED12C6D00EAF7AB /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E838C2ED12C6D00EAF7AB /* UserAPI.swift */; };
+		0B8E84112ED12C6D00EAF7AB /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83CF2ED12C6D00EAF7AB /* HapticManager.swift */; };
+		0B8E84122ED12C6D00EAF7AB /* PulseStatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83B12ED12C6D00EAF7AB /* PulseStatusList.swift */; };
+		0B8E84132ED12C6D00EAF7AB /* MemberDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A42ED12C6D00EAF7AB /* MemberDetailSheet.swift */; };
+		0B8E84142ED12C6D00EAF7AB /* QuickNoteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A62ED12C6D00EAF7AB /* QuickNoteSheet.swift */; };
+		0B8E84152ED12C6D00EAF7AB /* Date+RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83CC2ED12C6D00EAF7AB /* Date+RelativeTime.swift */; };
+		0B8E84162ED12C6D00EAF7AB /* PulseLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E837A2ED12C6D00EAF7AB /* PulseLocationManager.swift */; };
+		0B8E84172ED12C6D00EAF7AB /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83922ED12C6D00EAF7AB /* EmptyState.swift */; };
+		0B8E84182ED12C6D00EAF7AB /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83832ED12C6D00EAF7AB /* UserProfile.swift */; };
+		0B8E84192ED12C6D00EAF7AB /* MemberStatusRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83AF2ED12C6D00EAF7AB /* MemberStatusRow.swift */; };
+		0B8E841A2ED12C6D00EAF7AB /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83952ED12C6D00EAF7AB /* DesignSystem.swift */; };
+		0B8E841B2ED12C6D00EAF7AB /* StatusEventDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E837C2ED12C6D00EAF7AB /* StatusEventDTO.swift */; };
+		0B8E841C2ED12C6D00EAF7AB /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83862ED12C6D00EAF7AB /* FeedItem.swift */; };
+		0B8E841D2ED12C6D00EAF7AB /* AudioUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83712ED12C6D00EAF7AB /* AudioUploadManager.swift */; };
+		0B8E841E2ED12C6D00EAF7AB /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83B82ED12C6D00EAF7AB /* TasksView.swift */; };
+		0B8E841F2ED12C6D00EAF7AB /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83722ED12C6D00EAF7AB /* SpeechRecognitionManager.swift */; };
+		0B8E84202ED12C6D00EAF7AB /* View+LiquidGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83CD2ED12C6D00EAF7AB /* View+LiquidGlass.swift */; };
+		0B8E84212ED12C6D00EAF7AB /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83C22ED12C6D00EAF7AB /* MediumWidgetView.swift */; };
+		0B8E84222ED12C6D00EAF7AB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E838F2ED12C6D00EAF7AB /* ActionButton.swift */; };
+		0B8E84232ED12C6D00EAF7AB /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A02ED12C6D00EAF7AB /* FloatingActionButton.swift */; };
+		0B8E84242ED12C6D00EAF7AB /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83882ED12C6D00EAF7AB /* GroupAPI.swift */; };
+		0B8E84252ED12C6D00EAF7AB /* GroupSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83AD2ED12C6D00EAF7AB /* GroupSummaryCard.swift */; };
+		0B8E84262ED12C6D00EAF7AB /* TickTaskIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83BD2ED12C6D00EAF7AB /* TickTaskIntent.swift */; };
+		0B8E84272ED12C6D00EAF7AB /* QuickTaskSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83A72ED12C6D00EAF7AB /* QuickTaskSheet.swift */; };
+		0B8E84282ED12C6D00EAF7AB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83912ED12C6D00EAF7AB /* Card.swift */; };
+		0B8E84292ED12C6D00EAF7AB /* AppGroupStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83742ED12C6D00EAF7AB /* AppGroupStore.swift */; };
+		0B8E842A2ED12C6D00EAF7AB /* PulseBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83792ED12C6D00EAF7AB /* PulseBluetoothManager.swift */; };
+		0B8E842B2ED12C6D00EAF7AB /* TaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E837D2ED12C6D00EAF7AB /* TaskDTO.swift */; };
+		0B8E842C2ED12C6D00EAF7AB /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E83932ED12C6D00EAF7AB /* StatusIndicator.swift */; };
+		0B8E842D2ED12C6D00EAF7AB /* PostHog.plist.template in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83672ED12C6D00EAF7AB /* PostHog.plist.template */; };
+		0B8E842E2ED12C6D00EAF7AB /* COMPLETION_SUMMARY.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83D52ED12C6D00EAF7AB /* COMPLETION_SUMMARY.md */; };
+		0B8E842F2ED12C6D00EAF7AB /* rename_target.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83DD2ED12C6D00EAF7AB /* rename_target.rb */; };
+		0B8E84312ED12C6D00EAF7AB /* generate_project.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83D62ED12C6D00EAF7AB /* generate_project.rb */; };
+		0B8E84322ED12C6D00EAF7AB /* setup.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83DE2ED12C6D00EAF7AB /* setup.sh */; };
+		0B8E84342ED12C6D00EAF7AB /* check_paths.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83D42ED12C6D00EAF7AB /* check_paths.rb */; };
+		0B8E84352ED12C6D00EAF7AB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83DC2ED12C6D00EAF7AB /* README.md */; };
+		0B8E84362ED12C6D00EAF7AB /* SETUP.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83DF2ED12C6D00EAF7AB /* SETUP.md */; };
+		0B8E84372ED12C6D00EAF7AB /* PULSE_IMPLEMENTATION_SUMMARY.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83D92ED12C6D00EAF7AB /* PULSE_IMPLEMENTATION_SUMMARY.md */; };
+		0B8E84392ED12C6D00EAF7AB /* PULSE_MVP_PLAN.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E83DA2ED12C6D00EAF7AB /* PULSE_MVP_PLAN.md */; };
+		0B8E843A2ED12C6D00EAF7AB /* Supabase.plist.template in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E836A2ED12C6D00EAF7AB /* Supabase.plist.template */; };
 		0BA60D592ECC69C7004A8F0C /* PostHog in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA60D582ECC69C7004A8F0C /* PostHog */; };
 		0BA60D5C2ECC69E2004A8F0C /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA60D5B2ECC69E2004A8F0C /* Auth */; };
 		0BA60D5E2ECC69E2004A8F0C /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA60D5D2ECC69E2004A8F0C /* Functions */; };
@@ -16,91 +101,105 @@
 		0BA60D622ECC69E2004A8F0C /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA60D612ECC69E2004A8F0C /* Realtime */; };
 		0BA60D642ECC69E2004A8F0C /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA60D632ECC69E2004A8F0C /* Storage */; };
 		0BA60D662ECC69E2004A8F0C /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA60D652ECC69E2004A8F0C /* Supabase */; };
-		0F2A459EB33D51E4BF5B529A /* PulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CEE8B1838557EA109EC72B /* PulseApp.swift */; };
-		12B7D7E5D49214D54C49E03A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCEAE4D10308A1595B27B63 /* Note.swift */; };
-		17A79C6A3C3242DE55A1749F /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CE7576EB146FA98F1DA6FE /* ProfileSetupView.swift */; };
-		17CBF585404E235140F991DE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B290B6AFE71654305282BF /* NotificationManager.swift */; };
-		17DCBB6F59AF57E835735D92 /* StatusAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA5A2E1E92E7A0B47A7BE0 /* StatusAPI.swift */; };
-		19E8CA3B03486EFF2AD3F6DE /* TaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3942E0F1864899ED667C75 /* TaskDTO.swift */; };
-		1AC276ECED56106CE363FE50 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD21BCFFC27D395605ACD39 /* TasksView.swift */; };
-		1DB3BFF268996A08EFCEBBB3 /* StatusEventDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B36D252E759C59F4A3F45D /* StatusEventDTO.swift */; };
-		22E21675B5B0B1F96EAFB110 /* MemberStatusRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BD4B548BF8F859082827D /* MemberStatusRow.swift */; };
-		23B50FBB4AD11D99993BA1D7 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DA01E95B05409E0290E9B /* TaskItem.swift */; };
-		247EF5346FE56539B2C2B05E /* Color+Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277B738EF1F22B43C8412ED6 /* Color+Pulse.swift */; };
-		306FA0264B9EB3D11CE76157 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3E6A784C90416BC1555C2 /* NotesView.swift */; };
-		33E45D3267E4484EBD0EAACB /* PulseLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B226EE0C9260189D981B5102 /* PulseLocationManager.swift */; };
-		391FB59E5246B5E28D9056BA /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C083A02D0E40CA4F02E85B /* HapticManager.swift */; };
-		3C15AF31FED33DB3A7E9BB0A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB9AD9B805439989B7EA6DA /* UserProfile.swift */; };
-		4C4168538EF836D68C52ADC0 /* PulseBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB2016FF32590865A74518 /* PulseBluetoothManager.swift */; };
-		4FC640E67FC07CEE0A2279F9 /* TaskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9D1A5519EC085E6466E56 /* TaskAPI.swift */; };
-		595E786B16C85D52AF72CCBD /* RealtimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525612E62A4C2FDBF1A35902 /* RealtimeManager.swift */; };
-		5BDEE12F803BF74FCF1154FB /* Date+RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2521D3E92515B0FBFFFD89B2 /* Date+RelativeTime.swift */; };
-		5CEC5A4316EBE9D234BE2947 /* AppGroupStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB82BC59F065F094E5039A /* AppGroupStore.swift */; };
-		6206E47982069B850BD30F94 /* CurrentModeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033C77C7BC25060FAD609E3 /* CurrentModeCard.swift */; };
-		7D9608B345D17C5BC6E0E211 /* PulseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B0E470E9301F89380D7E3 /* PulseDataManager.swift */; };
-		8C10455851B3CBE3AC50CCFE /* ManualCheckInSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5A2E51A09EF3615A2AEA77 /* ManualCheckInSheet.swift */; };
-		8DDE5EC46E0AA979B320DC61 /* CheckInButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695A2495154F62CA71BCEA8 /* CheckInButtonsView.swift */; };
-		8E68185E1BB27F379F715BAB /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FF7E491CE1E8F50BD83F37 /* Group.swift */; };
-		900B6C42F13D2CE7DF825F9C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2EC97F656F49BA19586BB /* UserAPI.swift */; };
-		90391AEBE53256CE4C3B194C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50ADF2C3F1E7258E8344BB /* RootView.swift */; };
-		9799FD0C22973E619E84D367 /* GroupJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A80248E4FD922C75E0347 /* GroupJoinView.swift */; };
-		A07B48E4E153FCB6B7D415B2 /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3CD7D3E9420B0B213609E /* GroupAPI.swift */; };
-		A6823AC69D961D900F5F5E8C /* PostHogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8977253CDCB01D12A50E16E /* PostHogManager.swift */; };
-		AFED936A373C8FB66792C619 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31D3FA7A8F6AB16C2F0BA9C /* SupabaseClient.swift */; };
-		B22FB5FC6C9C11781E188403 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BBD8BCD9014DD55DF8C998 /* SettingsView.swift */; };
-		BB1EA49A8F26820875BAB13E /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BECC8A127E08CB625C2179 /* AnalyticsEvent.swift */; };
-		C9D086CA27822B6F8148AD59 /* PulseStatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F7D0B253B1E78FE88BA609 /* PulseStatusList.swift */; };
-		CE4472CCA8CDE84EF0BA7685 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBD1FFC5CF2D6789A8FC70F /* Foundation.framework */; };
-		F05D3940426D2433F05D5027 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021D548E60EE6B3197D3AC0 /* WelcomeView.swift */; };
-		F5FCF1636EDBB38EEBFD9817 /* View+LiquidGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E73B82BD9E14085F6E239 /* View+LiquidGlass.swift */; };
-		FFB3B0345F45760338DC83C2 /* PulseHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF62D95387FA12F26E0C188 /* PulseHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10BECC8A127E08CB625C2179 /* AnalyticsEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnalyticsEvent.swift; path = Pulse/Core/Analytics/AnalyticsEvent.swift; sourceTree = "<group>"; };
-		1C6E73B82BD9E14085F6E239 /* View+LiquidGlass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+LiquidGlass.swift"; path = "Pulse/Utilities/Extensions/View+LiquidGlass.swift"; sourceTree = "<group>"; };
-		1EB9AD9B805439989B7EA6DA /* UserProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = Pulse/Core/Models/SwiftData/UserProfile.swift; sourceTree = "<group>"; };
-		249BD4B548BF8F859082827D /* MemberStatusRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemberStatusRow.swift; path = Pulse/Features/PulseHome/MemberStatusRow.swift; sourceTree = "<group>"; };
-		2521D3E92515B0FBFFFD89B2 /* Date+RelativeTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+RelativeTime.swift"; path = "Pulse/Utilities/Extensions/Date+RelativeTime.swift"; sourceTree = "<group>"; };
-		277B738EF1F22B43C8412ED6 /* Color+Pulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Color+Pulse.swift"; path = "Pulse/Utilities/Extensions/Color+Pulse.swift"; sourceTree = "<group>"; };
-		27A025367F18EDA2E9117B6A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Pulse/Info.plist; sourceTree = "<group>"; };
-		32B290B6AFE71654305282BF /* NotificationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Pulse/Utilities/Helpers/NotificationManager.swift; sourceTree = "<group>"; };
-		3DF62D95387FA12F26E0C188 /* PulseHomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseHomeView.swift; path = Pulse/Features/PulseHome/PulseHomeView.swift; sourceTree = "<group>"; };
-		47CA5A2E1E92E7A0B47A7BE0 /* StatusAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusAPI.swift; path = Pulse/Core/Network/StatusAPI.swift; sourceTree = "<group>"; };
-		498A80248E4FD922C75E0347 /* GroupJoinView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupJoinView.swift; path = Pulse/Features/Auth/GroupJoinView.swift; sourceTree = "<group>"; };
-		525612E62A4C2FDBF1A35902 /* RealtimeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RealtimeManager.swift; path = Pulse/Core/Data/RealtimeManager.swift; sourceTree = "<group>"; };
-		65BBD8BCD9014DD55DF8C998 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Pulse/Features/Settings/SettingsView.swift; sourceTree = "<group>"; };
-		6C3942E0F1864899ED667C75 /* TaskDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDTO.swift; path = Pulse/Core/Models/DTO/TaskDTO.swift; sourceTree = "<group>"; };
-		72FF7E491CE1E8F50BD83F37 /* Group.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Pulse/Core/Models/SwiftData/Group.swift; sourceTree = "<group>"; };
-		7CF3E6A784C90416BC1555C2 /* NotesView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotesView.swift; path = Pulse/Features/Tasks/NotesView.swift; sourceTree = "<group>"; };
-		7ECB82BC59F065F094E5039A /* AppGroupStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppGroupStore.swift; path = Pulse/Core/Data/AppGroupStore.swift; sourceTree = "<group>"; };
-		8666E27DF0B464521668E27B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Pulse/README.md; sourceTree = "<group>"; };
-		8D5A2E51A09EF3615A2AEA77 /* ManualCheckInSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ManualCheckInSheet.swift; path = Pulse/Features/PulseHome/ManualCheckInSheet.swift; sourceTree = "<group>"; };
-		9021D548E60EE6B3197D3AC0 /* WelcomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = Pulse/Features/Auth/WelcomeView.swift; sourceTree = "<group>"; };
-		96B36D252E759C59F4A3F45D /* StatusEventDTO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StatusEventDTO.swift; path = Pulse/Core/Models/DTO/StatusEventDTO.swift; sourceTree = "<group>"; };
-		9DF3CD7D3E9420B0B213609E /* GroupAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupAPI.swift; path = Pulse/Core/Network/GroupAPI.swift; sourceTree = "<group>"; };
-		A033C77C7BC25060FAD609E3 /* CurrentModeCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurrentModeCard.swift; path = Pulse/Features/Settings/CurrentModeCard.swift; sourceTree = "<group>"; };
-		A1BB2016FF32590865A74518 /* PulseBluetoothManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseBluetoothManager.swift; path = Pulse/Core/Location/PulseBluetoothManager.swift; sourceTree = "<group>"; };
-		A8ED5CD17ECB681C0C1400D4 /* Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFCEAE4D10308A1595B27B63 /* Note.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Pulse/Core/Models/SwiftData/Note.swift; sourceTree = "<group>"; };
-		B226EE0C9260189D981B5102 /* PulseLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseLocationManager.swift; path = Pulse/Core/Location/PulseLocationManager.swift; sourceTree = "<group>"; };
-		B85FAAF8501C3A9F2F0ADF81 /* PulseStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseStatus.swift; path = Pulse/Core/Models/SwiftData/PulseStatus.swift; sourceTree = "<group>"; };
-		B8AC5BCF55A96B3F4321E7D1 /* GroupSummaryCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupSummaryCard.swift; path = Pulse/Features/PulseHome/GroupSummaryCard.swift; sourceTree = "<group>"; };
-		B9CEE8B1838557EA109EC72B /* PulseApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseApp.swift; path = Pulse/PulseApp.swift; sourceTree = "<group>"; };
-		BC1DA01E95B05409E0290E9B /* TaskItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskItem.swift; path = Pulse/Core/Models/SwiftData/TaskItem.swift; sourceTree = "<group>"; };
-		C2CE7576EB146FA98F1DA6FE /* ProfileSetupView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProfileSetupView.swift; path = Pulse/Features/Auth/ProfileSetupView.swift; sourceTree = "<group>"; };
-		C31D3FA7A8F6AB16C2F0BA9C /* SupabaseClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SupabaseClient.swift; path = Pulse/Core/Network/SupabaseClient.swift; sourceTree = "<group>"; };
-		C6C083A02D0E40CA4F02E85B /* HapticManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HapticManager.swift; path = Pulse/Utilities/Helpers/HapticManager.swift; sourceTree = "<group>"; };
-		D4B0BB09609B14DC8B478D06 /* Pulse.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; name = Pulse.entitlements; path = Pulse/Pulse.entitlements; sourceTree = "<group>"; };
-		DB50ADF2C3F1E7258E8344BB /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = Pulse/App/RootView.swift; sourceTree = "<group>"; };
-		DDBD1FFC5CF2D6789A8FC70F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E695A2495154F62CA71BCEA8 /* CheckInButtonsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckInButtonsView.swift; path = Pulse/Features/PulseHome/CheckInButtonsView.swift; sourceTree = "<group>"; };
-		EEE2EC97F656F49BA19586BB /* UserAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserAPI.swift; path = Pulse/Core/Network/UserAPI.swift; sourceTree = "<group>"; };
-		F0F9D1A5519EC085E6466E56 /* TaskAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskAPI.swift; path = Pulse/Core/Network/TaskAPI.swift; sourceTree = "<group>"; };
-		F8977253CDCB01D12A50E16E /* PostHogManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostHogManager.swift; path = Pulse/Core/Analytics/PostHogManager.swift; sourceTree = "<group>"; };
-		F8F7D0B253B1E78FE88BA609 /* PulseStatusList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseStatusList.swift; path = Pulse/Features/PulseHome/PulseStatusList.swift; sourceTree = "<group>"; };
-		FB9B0E470E9301F89380D7E3 /* PulseDataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PulseDataManager.swift; path = Pulse/Core/Data/PulseDataManager.swift; sourceTree = "<group>"; };
-		FFD21BCFFC27D395605ACD39 /* TasksView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TasksView.swift; path = Pulse/Features/Tasks/TasksView.swift; sourceTree = "<group>"; };
+		0B8E83642ED12C6D00EAF7AB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0B8E83662ED12C6D00EAF7AB /* PostHog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PostHog.plist; sourceTree = "<group>"; };
+		0B8E83672ED12C6D00EAF7AB /* PostHog.plist.template */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PostHog.plist.template; sourceTree = "<group>"; };
+		0B8E83682ED12C6D00EAF7AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0B8E83692ED12C6D00EAF7AB /* Supabase.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Supabase.plist; sourceTree = "<group>"; };
+		0B8E836A2ED12C6D00EAF7AB /* Supabase.plist.template */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Supabase.plist.template; sourceTree = "<group>"; };
+		0B8E836C2ED12C6D00EAF7AB /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		0B8E836D2ED12C6D00EAF7AB /* PostHogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHogManager.swift; sourceTree = "<group>"; };
+		0B8E836F2ED12C6D00EAF7AB /* AudioCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureManager.swift; sourceTree = "<group>"; };
+		0B8E83702ED12C6D00EAF7AB /* AudioPlaybackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackManager.swift; sourceTree = "<group>"; };
+		0B8E83712ED12C6D00EAF7AB /* AudioUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUploadManager.swift; sourceTree = "<group>"; };
+		0B8E83722ED12C6D00EAF7AB /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
+		0B8E83742ED12C6D00EAF7AB /* AppGroupStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupStore.swift; sourceTree = "<group>"; };
+		0B8E83752ED12C6D00EAF7AB /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
+		0B8E83762ED12C6D00EAF7AB /* PulseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseDataManager.swift; sourceTree = "<group>"; };
+		0B8E83772ED12C6D00EAF7AB /* RealtimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeManager.swift; sourceTree = "<group>"; };
+		0B8E83792ED12C6D00EAF7AB /* PulseBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseBluetoothManager.swift; sourceTree = "<group>"; };
+		0B8E837A2ED12C6D00EAF7AB /* PulseLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseLocationManager.swift; sourceTree = "<group>"; };
+		0B8E837C2ED12C6D00EAF7AB /* StatusEventDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEventDTO.swift; sourceTree = "<group>"; };
+		0B8E837D2ED12C6D00EAF7AB /* TaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDTO.swift; sourceTree = "<group>"; };
+		0B8E837F2ED12C6D00EAF7AB /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		0B8E83802ED12C6D00EAF7AB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		0B8E83812ED12C6D00EAF7AB /* PulseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseStatus.swift; sourceTree = "<group>"; };
+		0B8E83822ED12C6D00EAF7AB /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		0B8E83832ED12C6D00EAF7AB /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		0B8E83842ED12C6D00EAF7AB /* VoiceMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageModel.swift; sourceTree = "<group>"; };
+		0B8E83862ED12C6D00EAF7AB /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		0B8E83882ED12C6D00EAF7AB /* GroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
+		0B8E83892ED12C6D00EAF7AB /* StatusAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAPI.swift; sourceTree = "<group>"; };
+		0B8E838A2ED12C6D00EAF7AB /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		0B8E838B2ED12C6D00EAF7AB /* TaskAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAPI.swift; sourceTree = "<group>"; };
+		0B8E838C2ED12C6D00EAF7AB /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		0B8E838F2ED12C6D00EAF7AB /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		0B8E83902ED12C6D00EAF7AB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		0B8E83912ED12C6D00EAF7AB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0B8E83922ED12C6D00EAF7AB /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		0B8E83932ED12C6D00EAF7AB /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
+		0B8E83952ED12C6D00EAF7AB /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		0B8E83972ED12C6D00EAF7AB /* GroupJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupJoinView.swift; sourceTree = "<group>"; };
+		0B8E83982ED12C6D00EAF7AB /* ProfileSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupView.swift; sourceTree = "<group>"; };
+		0B8E83992ED12C6D00EAF7AB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		0B8E839B2ED12C6D00EAF7AB /* LocationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCard.swift; sourceTree = "<group>"; };
+		0B8E839C2ED12C6D00EAF7AB /* NoteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCard.swift; sourceTree = "<group>"; };
+		0B8E839D2ED12C6D00EAF7AB /* TaskCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCard.swift; sourceTree = "<group>"; };
+		0B8E839E2ED12C6D00EAF7AB /* VoiceMessageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessageCard.swift; sourceTree = "<group>"; };
+		0B8E83A02ED12C6D00EAF7AB /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
+		0B8E83A12ED12C6D00EAF7AB /* GroupSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSwitcher.swift; sourceTree = "<group>"; };
+		0B8E83A22ED12C6D00EAF7AB /* HeroStatusCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroStatusCard.swift; sourceTree = "<group>"; };
+		0B8E83A42ED12C6D00EAF7AB /* MemberDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailSheet.swift; sourceTree = "<group>"; };
+		0B8E83A52ED12C6D00EAF7AB /* QuickCheckInSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCheckInSheet.swift; sourceTree = "<group>"; };
+		0B8E83A62ED12C6D00EAF7AB /* QuickNoteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNoteSheet.swift; sourceTree = "<group>"; };
+		0B8E83A72ED12C6D00EAF7AB /* QuickTaskSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskSheet.swift; sourceTree = "<group>"; };
+		0B8E83A82ED12C6D00EAF7AB /* VoiceRecordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecordSheet.swift; sourceTree = "<group>"; };
+		0B8E83AA2ED12C6D00EAF7AB /* UnifiedFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedFeedView.swift; sourceTree = "<group>"; };
+		0B8E83AC2ED12C6D00EAF7AB /* CheckInButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInButtonsView.swift; sourceTree = "<group>"; };
+		0B8E83AD2ED12C6D00EAF7AB /* GroupSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSummaryCard.swift; sourceTree = "<group>"; };
+		0B8E83AE2ED12C6D00EAF7AB /* ManualCheckInSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCheckInSheet.swift; sourceTree = "<group>"; };
+		0B8E83AF2ED12C6D00EAF7AB /* MemberStatusRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberStatusRow.swift; sourceTree = "<group>"; };
+		0B8E83B02ED12C6D00EAF7AB /* PulseHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseHomeView.swift; sourceTree = "<group>"; };
+		0B8E83B12ED12C6D00EAF7AB /* PulseStatusList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseStatusList.swift; sourceTree = "<group>"; };
+		0B8E83B32ED12C6D00EAF7AB /* CurrentModeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentModeCard.swift; sourceTree = "<group>"; };
+		0B8E83B42ED12C6D00EAF7AB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0B8E83B52ED12C6D00EAF7AB /* SettingsViewRedesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewRedesign.swift; sourceTree = "<group>"; };
+		0B8E83B72ED12C6D00EAF7AB /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		0B8E83B82ED12C6D00EAF7AB /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		0B8E83BB2ED12C6D00EAF7AB /* MarkSafeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSafeIntent.swift; sourceTree = "<group>"; };
+		0B8E83BC2ED12C6D00EAF7AB /* RefreshPulseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshPulseIntent.swift; sourceTree = "<group>"; };
+		0B8E83BD2ED12C6D00EAF7AB /* TickTaskIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickTaskIntent.swift; sourceTree = "<group>"; };
+		0B8E83BF2ED12C6D00EAF7AB /* PulseTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseTimelineProvider.swift; sourceTree = "<group>"; };
+		0B8E83C12ED12C6D00EAF7AB /* LargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetView.swift; sourceTree = "<group>"; };
+		0B8E83C22ED12C6D00EAF7AB /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		0B8E83C32ED12C6D00EAF7AB /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
+		0B8E83C52ED12C6D00EAF7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B8E83C62ED12C6D00EAF7AB /* PulseWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PulseWidget.entitlements; sourceTree = "<group>"; };
+		0B8E83C72ED12C6D00EAF7AB /* PulseWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseWidget.swift; sourceTree = "<group>"; };
+		0B8E83C82ED12C6D00EAF7AB /* PulseWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseWidgetBundle.swift; sourceTree = "<group>"; };
+		0B8E83C92ED12C6D00EAF7AB /* PulseWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseWidgetEntry.swift; sourceTree = "<group>"; };
+		0B8E83CB2ED12C6D00EAF7AB /* Color+Pulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Pulse.swift"; sourceTree = "<group>"; };
+		0B8E83CC2ED12C6D00EAF7AB /* Date+RelativeTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+RelativeTime.swift"; sourceTree = "<group>"; };
+		0B8E83CD2ED12C6D00EAF7AB /* View+LiquidGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+LiquidGlass.swift"; sourceTree = "<group>"; };
+		0B8E83CF2ED12C6D00EAF7AB /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		0B8E83D02ED12C6D00EAF7AB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		0B8E83D32ED12C6D00EAF7AB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B8E83D42ED12C6D00EAF7AB /* check_paths.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = check_paths.rb; sourceTree = "<group>"; };
+		0B8E83D52ED12C6D00EAF7AB /* COMPLETION_SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COMPLETION_SUMMARY.md; sourceTree = "<group>"; };
+		0B8E83D62ED12C6D00EAF7AB /* generate_project.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = generate_project.rb; sourceTree = "<group>"; };
+		0B8E83D72ED12C6D00EAF7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B8E83D82ED12C6D00EAF7AB /* Pulse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pulse.entitlements; sourceTree = "<group>"; };
+		0B8E83D92ED12C6D00EAF7AB /* PULSE_IMPLEMENTATION_SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PULSE_IMPLEMENTATION_SUMMARY.md; sourceTree = "<group>"; };
+		0B8E83DA2ED12C6D00EAF7AB /* PULSE_MVP_PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PULSE_MVP_PLAN.md; sourceTree = "<group>"; };
+		0B8E83DB2ED12C6D00EAF7AB /* PulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseApp.swift; sourceTree = "<group>"; };
+		0B8E83DC2ED12C6D00EAF7AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0B8E83DD2ED12C6D00EAF7AB /* rename_target.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rename_target.rb; sourceTree = "<group>"; };
+		0B8E83DE2ED12C6D00EAF7AB /* setup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = setup.sh; sourceTree = "<group>"; };
+		0B8E83DF2ED12C6D00EAF7AB /* SETUP.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SETUP.md; sourceTree = "<group>"; };
+		A8ED5CD17ECB681C0C1400D4 /* Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Pulse.app; path = "/Users/lukefornieri/Pulse/build/Debug-iphoneos/Pulse.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +207,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4472CCA8CDE84EF0BA7685 /* Foundation.framework in Frameworks */,
 				0BA60D592ECC69C7004A8F0C /* PostHog in Frameworks */,
 				0BA60D642ECC69E2004A8F0C /* Storage in Frameworks */,
 				0BA60D5E2ECC69E2004A8F0C /* Functions in Frameworks */,
@@ -122,93 +220,344 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11D4A8248860F0E6732C9146 /*  */ = {
+		0B8E83652ED12C6D00EAF7AB /* App */ = {
 			isa = PBXGroup;
 			children = (
-				DB50ADF2C3F1E7258E8344BB /* RootView.swift */,
-				10BECC8A127E08CB625C2179 /* AnalyticsEvent.swift */,
-				F8977253CDCB01D12A50E16E /* PostHogManager.swift */,
-				7ECB82BC59F065F094E5039A /* AppGroupStore.swift */,
-				FB9B0E470E9301F89380D7E3 /* PulseDataManager.swift */,
-				525612E62A4C2FDBF1A35902 /* RealtimeManager.swift */,
-				A1BB2016FF32590865A74518 /* PulseBluetoothManager.swift */,
-				B226EE0C9260189D981B5102 /* PulseLocationManager.swift */,
-				96B36D252E759C59F4A3F45D /* StatusEventDTO.swift */,
-				6C3942E0F1864899ED667C75 /* TaskDTO.swift */,
-				72FF7E491CE1E8F50BD83F37 /* Group.swift */,
-				AFCEAE4D10308A1595B27B63 /* Note.swift */,
-				B85FAAF8501C3A9F2F0ADF81 /* PulseStatus.swift */,
-				BC1DA01E95B05409E0290E9B /* TaskItem.swift */,
-				1EB9AD9B805439989B7EA6DA /* UserProfile.swift */,
-				9DF3CD7D3E9420B0B213609E /* GroupAPI.swift */,
-				47CA5A2E1E92E7A0B47A7BE0 /* StatusAPI.swift */,
-				C31D3FA7A8F6AB16C2F0BA9C /* SupabaseClient.swift */,
-				F0F9D1A5519EC085E6466E56 /* TaskAPI.swift */,
-				EEE2EC97F656F49BA19586BB /* UserAPI.swift */,
-				498A80248E4FD922C75E0347 /* GroupJoinView.swift */,
-				C2CE7576EB146FA98F1DA6FE /* ProfileSetupView.swift */,
-				9021D548E60EE6B3197D3AC0 /* WelcomeView.swift */,
-				E695A2495154F62CA71BCEA8 /* CheckInButtonsView.swift */,
-				B8AC5BCF55A96B3F4321E7D1 /* GroupSummaryCard.swift */,
-				8D5A2E51A09EF3615A2AEA77 /* ManualCheckInSheet.swift */,
-				249BD4B548BF8F859082827D /* MemberStatusRow.swift */,
-				3DF62D95387FA12F26E0C188 /* PulseHomeView.swift */,
-				F8F7D0B253B1E78FE88BA609 /* PulseStatusList.swift */,
-				A033C77C7BC25060FAD609E3 /* CurrentModeCard.swift */,
-				65BBD8BCD9014DD55DF8C998 /* SettingsView.swift */,
-				7CF3E6A784C90416BC1555C2 /* NotesView.swift */,
-				FFD21BCFFC27D395605ACD39 /* TasksView.swift */,
-				27A025367F18EDA2E9117B6A /* Info.plist */,
-				D4B0BB09609B14DC8B478D06 /* Pulse.entitlements */,
-				B9CEE8B1838557EA109EC72B /* PulseApp.swift */,
-				8666E27DF0B464521668E27B /* README.md */,
-				277B738EF1F22B43C8412ED6 /* Color+Pulse.swift */,
-				2521D3E92515B0FBFFFD89B2 /* Date+RelativeTime.swift */,
-				1C6E73B82BD9E14085F6E239 /* View+LiquidGlass.swift */,
-				C6C083A02D0E40CA4F02E85B /* HapticManager.swift */,
-				32B290B6AFE71654305282BF /* NotificationManager.swift */,
+				0B8E83642ED12C6D00EAF7AB /* RootView.swift */,
 			);
-			name = "";
+			path = App;
 			sourceTree = "<group>";
 		};
-		36D2398A8272DC8BD30AE0A1 /* iOS */ = {
+		0B8E836B2ED12C6D00EAF7AB /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				DDBD1FFC5CF2D6789A8FC70F /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		8188C1199146999B3A224AA6 /* Config */ = {
-			isa = PBXGroup;
-			children = (
+				0B8E83662ED12C6D00EAF7AB /* PostHog.plist */,
+				0B8E83672ED12C6D00EAF7AB /* PostHog.plist.template */,
+				0B8E83682ED12C6D00EAF7AB /* README.md */,
+				0B8E83692ED12C6D00EAF7AB /* Supabase.plist */,
+				0B8E836A2ED12C6D00EAF7AB /* Supabase.plist.template */,
 			);
 			path = Config;
 			sourceTree = "<group>";
 		};
-		C830BB607EB29AE8CE381B15 /* Frameworks */ = {
+		0B8E836E2ED12C6D00EAF7AB /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				36D2398A8272DC8BD30AE0A1 /* iOS */,
+				0B8E836C2ED12C6D00EAF7AB /* AnalyticsEvent.swift */,
+				0B8E836D2ED12C6D00EAF7AB /* PostHogManager.swift */,
 			);
-			name = Frameworks;
+			path = Analytics;
 			sourceTree = "<group>";
 		};
-		E915D55A351930EDD7FE5460 /* Products */ = {
+		0B8E83732ED12C6D00EAF7AB /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				A8ED5CD17ECB681C0C1400D4 /* Pulse.app */,
+				0B8E836F2ED12C6D00EAF7AB /* AudioCaptureManager.swift */,
+				0B8E83702ED12C6D00EAF7AB /* AudioPlaybackManager.swift */,
+				0B8E83712ED12C6D00EAF7AB /* AudioUploadManager.swift */,
+				0B8E83722ED12C6D00EAF7AB /* SpeechRecognitionManager.swift */,
 			);
-			name = Products;
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		0B8E83782ED12C6D00EAF7AB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83742ED12C6D00EAF7AB /* AppGroupStore.swift */,
+				0B8E83752ED12C6D00EAF7AB /* FeedManager.swift */,
+				0B8E83762ED12C6D00EAF7AB /* PulseDataManager.swift */,
+				0B8E83772ED12C6D00EAF7AB /* RealtimeManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0B8E837B2ED12C6D00EAF7AB /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83792ED12C6D00EAF7AB /* PulseBluetoothManager.swift */,
+				0B8E837A2ED12C6D00EAF7AB /* PulseLocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		0B8E837E2ED12C6D00EAF7AB /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E837C2ED12C6D00EAF7AB /* StatusEventDTO.swift */,
+				0B8E837D2ED12C6D00EAF7AB /* TaskDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		0B8E83852ED12C6D00EAF7AB /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E837F2ED12C6D00EAF7AB /* Group.swift */,
+				0B8E83802ED12C6D00EAF7AB /* Note.swift */,
+				0B8E83812ED12C6D00EAF7AB /* PulseStatus.swift */,
+				0B8E83822ED12C6D00EAF7AB /* TaskItem.swift */,
+				0B8E83832ED12C6D00EAF7AB /* UserProfile.swift */,
+				0B8E83842ED12C6D00EAF7AB /* VoiceMessageModel.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		0B8E83872ED12C6D00EAF7AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E837E2ED12C6D00EAF7AB /* DTO */,
+				0B8E83852ED12C6D00EAF7AB /* SwiftData */,
+				0B8E83862ED12C6D00EAF7AB /* FeedItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0B8E838D2ED12C6D00EAF7AB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83882ED12C6D00EAF7AB /* GroupAPI.swift */,
+				0B8E83892ED12C6D00EAF7AB /* StatusAPI.swift */,
+				0B8E838A2ED12C6D00EAF7AB /* SupabaseClient.swift */,
+				0B8E838B2ED12C6D00EAF7AB /* TaskAPI.swift */,
+				0B8E838C2ED12C6D00EAF7AB /* UserAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0B8E838E2ED12C6D00EAF7AB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E836E2ED12C6D00EAF7AB /* Analytics */,
+				0B8E83732ED12C6D00EAF7AB /* Audio */,
+				0B8E83782ED12C6D00EAF7AB /* Data */,
+				0B8E837B2ED12C6D00EAF7AB /* Location */,
+				0B8E83872ED12C6D00EAF7AB /* Models */,
+				0B8E838D2ED12C6D00EAF7AB /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0B8E83942ED12C6D00EAF7AB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E838F2ED12C6D00EAF7AB /* ActionButton.swift */,
+				0B8E83902ED12C6D00EAF7AB /* AvatarView.swift */,
+				0B8E83912ED12C6D00EAF7AB /* Card.swift */,
+				0B8E83922ED12C6D00EAF7AB /* EmptyState.swift */,
+				0B8E83932ED12C6D00EAF7AB /* StatusIndicator.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0B8E83962ED12C6D00EAF7AB /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83942ED12C6D00EAF7AB /* Components */,
+				0B8E83952ED12C6D00EAF7AB /* DesignSystem.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		0B8E839A2ED12C6D00EAF7AB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83972ED12C6D00EAF7AB /* GroupJoinView.swift */,
+				0B8E83982ED12C6D00EAF7AB /* ProfileSetupView.swift */,
+				0B8E83992ED12C6D00EAF7AB /* WelcomeView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		0B8E839F2ED12C6D00EAF7AB /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E839B2ED12C6D00EAF7AB /* LocationCard.swift */,
+				0B8E839C2ED12C6D00EAF7AB /* NoteCard.swift */,
+				0B8E839D2ED12C6D00EAF7AB /* TaskCard.swift */,
+				0B8E839E2ED12C6D00EAF7AB /* VoiceMessageCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		0B8E83A32ED12C6D00EAF7AB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83A02ED12C6D00EAF7AB /* FloatingActionButton.swift */,
+				0B8E83A12ED12C6D00EAF7AB /* GroupSwitcher.swift */,
+				0B8E83A22ED12C6D00EAF7AB /* HeroStatusCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0B8E83A92ED12C6D00EAF7AB /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83A42ED12C6D00EAF7AB /* MemberDetailSheet.swift */,
+				0B8E83A52ED12C6D00EAF7AB /* QuickCheckInSheet.swift */,
+				0B8E83A62ED12C6D00EAF7AB /* QuickNoteSheet.swift */,
+				0B8E83A72ED12C6D00EAF7AB /* QuickTaskSheet.swift */,
+				0B8E83A82ED12C6D00EAF7AB /* VoiceRecordSheet.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		0B8E83AB2ED12C6D00EAF7AB /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E839F2ED12C6D00EAF7AB /* Cards */,
+				0B8E83A32ED12C6D00EAF7AB /* Components */,
+				0B8E83A92ED12C6D00EAF7AB /* Sheets */,
+				0B8E83AA2ED12C6D00EAF7AB /* UnifiedFeedView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		0B8E83B22ED12C6D00EAF7AB /* PulseHome */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83AC2ED12C6D00EAF7AB /* CheckInButtonsView.swift */,
+				0B8E83AD2ED12C6D00EAF7AB /* GroupSummaryCard.swift */,
+				0B8E83AE2ED12C6D00EAF7AB /* ManualCheckInSheet.swift */,
+				0B8E83AF2ED12C6D00EAF7AB /* MemberStatusRow.swift */,
+				0B8E83B02ED12C6D00EAF7AB /* PulseHomeView.swift */,
+				0B8E83B12ED12C6D00EAF7AB /* PulseStatusList.swift */,
+			);
+			path = PulseHome;
+			sourceTree = "<group>";
+		};
+		0B8E83B62ED12C6D00EAF7AB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83B32ED12C6D00EAF7AB /* CurrentModeCard.swift */,
+				0B8E83B42ED12C6D00EAF7AB /* SettingsView.swift */,
+				0B8E83B52ED12C6D00EAF7AB /* SettingsViewRedesign.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0B8E83B92ED12C6D00EAF7AB /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83B72ED12C6D00EAF7AB /* NotesView.swift */,
+				0B8E83B82ED12C6D00EAF7AB /* TasksView.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		0B8E83BA2ED12C6D00EAF7AB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E839A2ED12C6D00EAF7AB /* Auth */,
+				0B8E83AB2ED12C6D00EAF7AB /* Feed */,
+				0B8E83B22ED12C6D00EAF7AB /* PulseHome */,
+				0B8E83B62ED12C6D00EAF7AB /* Settings */,
+				0B8E83B92ED12C6D00EAF7AB /* Tasks */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0B8E83BE2ED12C6D00EAF7AB /* PulseIntents */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83BB2ED12C6D00EAF7AB /* MarkSafeIntent.swift */,
+				0B8E83BC2ED12C6D00EAF7AB /* RefreshPulseIntent.swift */,
+				0B8E83BD2ED12C6D00EAF7AB /* TickTaskIntent.swift */,
+			);
+			path = PulseIntents;
+			sourceTree = "<group>";
+		};
+		0B8E83C02ED12C6D00EAF7AB /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83BF2ED12C6D00EAF7AB /* PulseTimelineProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		0B8E83C42ED12C6D00EAF7AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83C12ED12C6D00EAF7AB /* LargeWidgetView.swift */,
+				0B8E83C22ED12C6D00EAF7AB /* MediumWidgetView.swift */,
+				0B8E83C32ED12C6D00EAF7AB /* SmallWidgetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0B8E83CA2ED12C6D00EAF7AB /* PulseWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83C02ED12C6D00EAF7AB /* Providers */,
+				0B8E83C42ED12C6D00EAF7AB /* Views */,
+				0B8E83C52ED12C6D00EAF7AB /* Info.plist */,
+				0B8E83C62ED12C6D00EAF7AB /* PulseWidget.entitlements */,
+				0B8E83C72ED12C6D00EAF7AB /* PulseWidget.swift */,
+				0B8E83C82ED12C6D00EAF7AB /* PulseWidgetBundle.swift */,
+				0B8E83C92ED12C6D00EAF7AB /* PulseWidgetEntry.swift */,
+			);
+			path = PulseWidget;
+			sourceTree = "<group>";
+		};
+		0B8E83CE2ED12C6D00EAF7AB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83CB2ED12C6D00EAF7AB /* Color+Pulse.swift */,
+				0B8E83CC2ED12C6D00EAF7AB /* Date+RelativeTime.swift */,
+				0B8E83CD2ED12C6D00EAF7AB /* View+LiquidGlass.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0B8E83D12ED12C6D00EAF7AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83CF2ED12C6D00EAF7AB /* HapticManager.swift */,
+				0B8E83D02ED12C6D00EAF7AB /* NotificationManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0B8E83D22ED12C6D00EAF7AB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83CE2ED12C6D00EAF7AB /* Extensions */,
+				0B8E83D12ED12C6D00EAF7AB /* Helpers */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0B8E83E02ED12C6D00EAF7AB /* Pulse */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E83652ED12C6D00EAF7AB /* App */,
+				0B8E836B2ED12C6D00EAF7AB /* Config */,
+				0B8E838E2ED12C6D00EAF7AB /* Core */,
+				0B8E83962ED12C6D00EAF7AB /* Design */,
+				0B8E83BA2ED12C6D00EAF7AB /* Features */,
+				0B8E83BE2ED12C6D00EAF7AB /* PulseIntents */,
+				0B8E83CA2ED12C6D00EAF7AB /* PulseWidget */,
+				0B8E83D22ED12C6D00EAF7AB /* Utilities */,
+				0B8E83D32ED12C6D00EAF7AB /* .gitignore */,
+				0B8E83D42ED12C6D00EAF7AB /* check_paths.rb */,
+				0B8E83D52ED12C6D00EAF7AB /* COMPLETION_SUMMARY.md */,
+				0B8E83D62ED12C6D00EAF7AB /* generate_project.rb */,
+				0B8E83D72ED12C6D00EAF7AB /* Info.plist */,
+				0B8E83D82ED12C6D00EAF7AB /* Pulse.entitlements */,
+				0B8E83D92ED12C6D00EAF7AB /* PULSE_IMPLEMENTATION_SUMMARY.md */,
+				0B8E83DA2ED12C6D00EAF7AB /* PULSE_MVP_PLAN.md */,
+				0B8E83DB2ED12C6D00EAF7AB /* PulseApp.swift */,
+				0B8E83DC2ED12C6D00EAF7AB /* README.md */,
+				0B8E83DD2ED12C6D00EAF7AB /* rename_target.rb */,
+				0B8E83DE2ED12C6D00EAF7AB /* setup.sh */,
+				0B8E83DF2ED12C6D00EAF7AB /* SETUP.md */,
+			);
+			path = Pulse;
 			sourceTree = "<group>";
 		};
 		F5C626A1E6D53DB97FD9A8C9 = {
 			isa = PBXGroup;
 			children = (
-				E915D55A351930EDD7FE5460 /* Products */,
-				C830BB607EB29AE8CE381B15 /* Frameworks */,
-				8188C1199146999B3A224AA6 /* Config */,
-				11D4A8248860F0E6732C9146 /*  */,
+				0B8E83E02ED12C6D00EAF7AB /* Pulse */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,13 +599,12 @@
 				en,
 				Base,
 			);
-			name = Pulse;
 			mainGroup = F5C626A1E6D53DB97FD9A8C9;
 			packageReferences = (
 				0BA60D572ECC69C7004A8F0C /* XCRemoteSwiftPackageReference "posthog-ios" */,
 				0BA60D5A2ECC69E2004A8F0C /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
-			productRefGroup = E915D55A351930EDD7FE5460 /* Products */;
+			productRefGroup = F5C626A1E6D53DB97FD9A8C9;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -270,6 +618,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8E842D2ED12C6D00EAF7AB /* PostHog.plist.template in Resources */,
+				0B8E842E2ED12C6D00EAF7AB /* COMPLETION_SUMMARY.md in Resources */,
+				0B8E842F2ED12C6D00EAF7AB /* rename_target.rb in Resources */,
+				0B8E84312ED12C6D00EAF7AB /* generate_project.rb in Resources */,
+				0B8E84322ED12C6D00EAF7AB /* setup.sh in Resources */,
+				0B8E84342ED12C6D00EAF7AB /* check_paths.rb in Resources */,
+				0B8E84352ED12C6D00EAF7AB /* README.md in Resources */,
+				0B8E84362ED12C6D00EAF7AB /* SETUP.md in Resources */,
+				0B8E84372ED12C6D00EAF7AB /* PULSE_IMPLEMENTATION_SUMMARY.md in Resources */,
+				0B8E84392ED12C6D00EAF7AB /* PULSE_MVP_PLAN.md in Resources */,
+				0B8E843A2ED12C6D00EAF7AB /* Supabase.plist.template in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,45 +639,82 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90391AEBE53256CE4C3B194C /* RootView.swift in Sources */,
-				BB1EA49A8F26820875BAB13E /* AnalyticsEvent.swift in Sources */,
-				A6823AC69D961D900F5F5E8C /* PostHogManager.swift in Sources */,
-				5CEC5A4316EBE9D234BE2947 /* AppGroupStore.swift in Sources */,
-				7D9608B345D17C5BC6E0E211 /* PulseDataManager.swift in Sources */,
-				595E786B16C85D52AF72CCBD /* RealtimeManager.swift in Sources */,
-				4C4168538EF836D68C52ADC0 /* PulseBluetoothManager.swift in Sources */,
-				33E45D3267E4484EBD0EAACB /* PulseLocationManager.swift in Sources */,
-				1DB3BFF268996A08EFCEBBB3 /* StatusEventDTO.swift in Sources */,
-				19E8CA3B03486EFF2AD3F6DE /* TaskDTO.swift in Sources */,
-				8E68185E1BB27F379F715BAB /* Group.swift in Sources */,
-				12B7D7E5D49214D54C49E03A /* Note.swift in Sources */,
-				031D1B4A5014764E82953E3B /* PulseStatus.swift in Sources */,
-				23B50FBB4AD11D99993BA1D7 /* TaskItem.swift in Sources */,
-				3C15AF31FED33DB3A7E9BB0A /* UserProfile.swift in Sources */,
-				A07B48E4E153FCB6B7D415B2 /* GroupAPI.swift in Sources */,
-				17DCBB6F59AF57E835735D92 /* StatusAPI.swift in Sources */,
-				AFED936A373C8FB66792C619 /* SupabaseClient.swift in Sources */,
-				4FC640E67FC07CEE0A2279F9 /* TaskAPI.swift in Sources */,
-				900B6C42F13D2CE7DF825F9C /* UserAPI.swift in Sources */,
-				9799FD0C22973E619E84D367 /* GroupJoinView.swift in Sources */,
-				17A79C6A3C3242DE55A1749F /* ProfileSetupView.swift in Sources */,
-				F05D3940426D2433F05D5027 /* WelcomeView.swift in Sources */,
-				8DDE5EC46E0AA979B320DC61 /* CheckInButtonsView.swift in Sources */,
-				0029139FA9532F4591F7A150 /* GroupSummaryCard.swift in Sources */,
-				8C10455851B3CBE3AC50CCFE /* ManualCheckInSheet.swift in Sources */,
-				22E21675B5B0B1F96EAFB110 /* MemberStatusRow.swift in Sources */,
-				FFB3B0345F45760338DC83C2 /* PulseHomeView.swift in Sources */,
-				C9D086CA27822B6F8148AD59 /* PulseStatusList.swift in Sources */,
-				6206E47982069B850BD30F94 /* CurrentModeCard.swift in Sources */,
-				B22FB5FC6C9C11781E188403 /* SettingsView.swift in Sources */,
-				306FA0264B9EB3D11CE76157 /* NotesView.swift in Sources */,
-				1AC276ECED56106CE363FE50 /* TasksView.swift in Sources */,
-				0F2A459EB33D51E4BF5B529A /* PulseApp.swift in Sources */,
-				247EF5346FE56539B2C2B05E /* Color+Pulse.swift in Sources */,
-				5BDEE12F803BF74FCF1154FB /* Date+RelativeTime.swift in Sources */,
-				F5FCF1636EDBB38EEBFD9817 /* View+LiquidGlass.swift in Sources */,
-				391FB59E5246B5E28D9056BA /* HapticManager.swift in Sources */,
-				17CBF585404E235140F991DE /* NotificationManager.swift in Sources */,
+				0B8E83E12ED12C6D00EAF7AB /* SmallWidgetView.swift in Sources */,
+				0B8E83E22ED12C6D00EAF7AB /* AnalyticsEvent.swift in Sources */,
+				0B8E83E32ED12C6D00EAF7AB /* NotificationManager.swift in Sources */,
+				0B8E83E42ED12C6D00EAF7AB /* CheckInButtonsView.swift in Sources */,
+				0B8E83E52ED12C6D00EAF7AB /* Group.swift in Sources */,
+				0B8E83E62ED12C6D00EAF7AB /* GroupSwitcher.swift in Sources */,
+				0B8E83E72ED12C6D00EAF7AB /* VoiceMessageCard.swift in Sources */,
+				0B8E83E82ED12C6D00EAF7AB /* QuickCheckInSheet.swift in Sources */,
+				0B8E83E92ED12C6D00EAF7AB /* RefreshPulseIntent.swift in Sources */,
+				0B8E83EA2ED12C6D00EAF7AB /* PulseHomeView.swift in Sources */,
+				0B8E83EB2ED12C6D00EAF7AB /* PulseWidgetEntry.swift in Sources */,
+				0B8E83EC2ED12C6D00EAF7AB /* Note.swift in Sources */,
+				0B8E83ED2ED12C6D00EAF7AB /* Color+Pulse.swift in Sources */,
+				0B8E83EE2ED12C6D00EAF7AB /* LocationCard.swift in Sources */,
+				0B8E83EF2ED12C6D00EAF7AB /* TaskAPI.swift in Sources */,
+				0B8E83F02ED12C6D00EAF7AB /* PulseDataManager.swift in Sources */,
+				0B8E83F12ED12C6D00EAF7AB /* LargeWidgetView.swift in Sources */,
+				0B8E83F22ED12C6D00EAF7AB /* AvatarView.swift in Sources */,
+				0B8E83F32ED12C6D00EAF7AB /* ManualCheckInSheet.swift in Sources */,
+				0B8E83F42ED12C6D00EAF7AB /* AudioPlaybackManager.swift in Sources */,
+				0B8E83F52ED12C6D00EAF7AB /* SupabaseClient.swift in Sources */,
+				0B8E83F62ED12C6D00EAF7AB /* AudioCaptureManager.swift in Sources */,
+				0B8E83F72ED12C6D00EAF7AB /* SettingsView.swift in Sources */,
+				0B8E83F82ED12C6D00EAF7AB /* VoiceRecordSheet.swift in Sources */,
+				0B8E83F92ED12C6D00EAF7AB /* NotesView.swift in Sources */,
+				0B8E83FA2ED12C6D00EAF7AB /* HeroStatusCard.swift in Sources */,
+				0B8E83FB2ED12C6D00EAF7AB /* PulseStatus.swift in Sources */,
+				0B8E83FC2ED12C6D00EAF7AB /* PulseApp.swift in Sources */,
+				0B8E83FD2ED12C6D00EAF7AB /* VoiceMessageModel.swift in Sources */,
+				0B8E83FE2ED12C6D00EAF7AB /* PulseTimelineProvider.swift in Sources */,
+				0B8E83FF2ED12C6D00EAF7AB /* RealtimeManager.swift in Sources */,
+				0B8E84002ED12C6D00EAF7AB /* StatusAPI.swift in Sources */,
+				0B8E84012ED12C6D00EAF7AB /* PulseWidgetBundle.swift in Sources */,
+				0B8E84022ED12C6D00EAF7AB /* FeedManager.swift in Sources */,
+				0B8E84032ED12C6D00EAF7AB /* TaskCard.swift in Sources */,
+				0B8E84042ED12C6D00EAF7AB /* CurrentModeCard.swift in Sources */,
+				0B8E84052ED12C6D00EAF7AB /* RootView.swift in Sources */,
+				0B8E84062ED12C6D00EAF7AB /* UnifiedFeedView.swift in Sources */,
+				0B8E84072ED12C6D00EAF7AB /* MarkSafeIntent.swift in Sources */,
+				0B8E84082ED12C6D00EAF7AB /* ProfileSetupView.swift in Sources */,
+				0B8E84092ED12C6D00EAF7AB /* GroupJoinView.swift in Sources */,
+				0B8E840A2ED12C6D00EAF7AB /* PulseWidget.swift in Sources */,
+				0B8E840B2ED12C6D00EAF7AB /* NoteCard.swift in Sources */,
+				0B8E840C2ED12C6D00EAF7AB /* SettingsViewRedesign.swift in Sources */,
+				0B8E840D2ED12C6D00EAF7AB /* TaskItem.swift in Sources */,
+				0B8E840E2ED12C6D00EAF7AB /* WelcomeView.swift in Sources */,
+				0B8E840F2ED12C6D00EAF7AB /* PostHogManager.swift in Sources */,
+				0B8E84102ED12C6D00EAF7AB /* UserAPI.swift in Sources */,
+				0B8E84112ED12C6D00EAF7AB /* HapticManager.swift in Sources */,
+				0B8E84122ED12C6D00EAF7AB /* PulseStatusList.swift in Sources */,
+				0B8E84132ED12C6D00EAF7AB /* MemberDetailSheet.swift in Sources */,
+				0B8E84142ED12C6D00EAF7AB /* QuickNoteSheet.swift in Sources */,
+				0B8E84152ED12C6D00EAF7AB /* Date+RelativeTime.swift in Sources */,
+				0B8E84162ED12C6D00EAF7AB /* PulseLocationManager.swift in Sources */,
+				0B8E84172ED12C6D00EAF7AB /* EmptyState.swift in Sources */,
+				0B8E84182ED12C6D00EAF7AB /* UserProfile.swift in Sources */,
+				0B8E84192ED12C6D00EAF7AB /* MemberStatusRow.swift in Sources */,
+				0B8E841A2ED12C6D00EAF7AB /* DesignSystem.swift in Sources */,
+				0B8E841B2ED12C6D00EAF7AB /* StatusEventDTO.swift in Sources */,
+				0B8E841C2ED12C6D00EAF7AB /* FeedItem.swift in Sources */,
+				0B8E841D2ED12C6D00EAF7AB /* AudioUploadManager.swift in Sources */,
+				0B8E841E2ED12C6D00EAF7AB /* TasksView.swift in Sources */,
+				0B8E841F2ED12C6D00EAF7AB /* SpeechRecognitionManager.swift in Sources */,
+				0B8E84202ED12C6D00EAF7AB /* View+LiquidGlass.swift in Sources */,
+				0B8E84212ED12C6D00EAF7AB /* MediumWidgetView.swift in Sources */,
+				0B8E84222ED12C6D00EAF7AB /* ActionButton.swift in Sources */,
+				0B8E84232ED12C6D00EAF7AB /* FloatingActionButton.swift in Sources */,
+				0B8E84242ED12C6D00EAF7AB /* GroupAPI.swift in Sources */,
+				0B8E84252ED12C6D00EAF7AB /* GroupSummaryCard.swift in Sources */,
+				0B8E84262ED12C6D00EAF7AB /* TickTaskIntent.swift in Sources */,
+				0B8E84272ED12C6D00EAF7AB /* QuickTaskSheet.swift in Sources */,
+				0B8E84282ED12C6D00EAF7AB /* Card.swift in Sources */,
+				0B8E84292ED12C6D00EAF7AB /* AppGroupStore.swift in Sources */,
+				0B8E842A2ED12C6D00EAF7AB /* PulseBluetoothManager.swift in Sources */,
+				0B8E842B2ED12C6D00EAF7AB /* TaskDTO.swift in Sources */,
+				0B8E842C2ED12C6D00EAF7AB /* StatusIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

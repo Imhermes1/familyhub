@@ -40,6 +40,12 @@ class PostHogManager {
         print("PostHog track: \(event) \(properties)")
     }
 
+    func track(_ event: AnalyticsEvent, properties extra: [String: Any] = [:]) {
+        var merged = event.properties
+        extra.forEach { merged[$0.key] = $0.value }
+        track(event.name, properties: merged)
+    }
+
     func screen(_ screenName: String, properties: [String: Any] = [:]) {
         guard isEnabled else { return }
 

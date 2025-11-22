@@ -58,6 +58,7 @@ struct MediumWidgetView: View {
 
             // Actions
             HStack(spacing: 12) {
+#if WIDGET_EXTENSION
                 Button(intent: MarkSafeIntent()) {
                     Label("I am here", systemImage: "location.fill")
                         .font(.caption)
@@ -67,6 +68,17 @@ struct MediumWidgetView: View {
                     Image(systemName: "arrow.clockwise")
                         .font(.caption)
                 }
+#else
+                Button(action: {}) {
+                    Label("I am here", systemImage: "location.fill")
+                        .font(.caption)
+                }
+                Spacer()
+                Button(action: {}) {
+                    Image(systemName: "arrow.clockwise")
+                        .font(.caption)
+                }
+#endif
             }
         }
         .padding()

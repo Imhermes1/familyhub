@@ -130,7 +130,7 @@ struct VoiceRecordSheet: View {
                 Circle()
                     .stroke(DesignSystem.Colors.warning.opacity(0.3), lineWidth: 4)
                     .frame(width: 140, height: 140)
-                    .scaleEffect(captureManager.audioLevel * 0.3 + 1.0)
+                    .scaleEffect(CGFloat(captureManager.audioLevel * 0.3 + 1.0))
                     .animation(.easeInOut(duration: 0.1), value: captureManager.audioLevel)
             }
 

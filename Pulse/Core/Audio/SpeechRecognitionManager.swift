@@ -98,10 +98,15 @@ class SpeechRecognitionManager: ObservableObject {
                         continuation.resume(returning: transcript)
 
                         // Track analytics
-                        PostHogManager.shared.track(.voiceMessageTranscribed, properties: [
-                            "word_count": result.bestTranscription.segments.count,
-                            "confidence": result.bestTranscription.segments.map { $0.confidence }.reduce(0, +) / Double(result.bestTranscription.segments.count)
-                        ])
+                        let segments = result.bestTranscription.segments
+                        let wordCount = segments.count
+                        let averageConfidence = Double(segments.map { Double($0.confidence) }.reduce(0, +) / Double(max(wordCount, 1)))
+                        PostHogManager.shared.track(
+                            .voiceMessageTranscribed(
+                                wordCount: wordCount,
+                                confidence: averageConfidence
+                            )
+                        )
                     }
                 }
             }

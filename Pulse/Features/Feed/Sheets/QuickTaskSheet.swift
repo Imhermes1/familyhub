@@ -144,7 +144,7 @@ struct QuickTaskSheet: View {
                 )
 
                 // Track analytics
-                PostHogManager.shared.track(.taskCreated, properties: [
+                PostHogManager.shared.track("task_added", properties: [
                     "has_due_date": hasDueDate,
                     "title_length": trimmedTitle.count
                 ])

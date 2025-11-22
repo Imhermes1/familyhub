@@ -4,7 +4,7 @@ import WidgetKit
 struct SmallWidgetView: View {
     let entry: PulseTimelineEntry
 
-    var myStatus: MemberStatus? {
+    var myStatus: WidgetMemberStatus? {
         entry.members.first
     }
 
@@ -35,10 +35,17 @@ struct SmallWidgetView: View {
 
             Spacer()
 
+#if WIDGET_EXTENSION
             Button(intent: MarkSafeIntent()) {
                 Label("Check in", systemImage: "location.fill")
                     .font(.caption)
             }
+#else
+            Button(action: {}) {
+                Label("Check in", systemImage: "location.fill")
+                    .font(.caption)
+            }
+#endif
         }
         .padding()
     }

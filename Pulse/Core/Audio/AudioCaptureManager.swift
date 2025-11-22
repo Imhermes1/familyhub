@@ -118,9 +118,7 @@ class AudioCaptureManager: NSObject, ObservableObject {
         let url = currentRecordingURL
 
         // Track analytics
-        PostHogManager.shared.track(.voiceRecordingStopped, properties: [
-            "duration": recordingDuration
-        ])
+        PostHogManager.shared.track(.voiceRecordingStopped(duration: recordingDuration))
 
         // Deactivate audio session
         try? audioSession.setActive(false)

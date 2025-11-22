@@ -43,7 +43,7 @@ struct MemberDetailSheet: View {
     // MARK: - Member Header
 
     private var memberHeader: some View {
-        Card.prominent {
+        ProminentCard {
             VStack(spacing: DesignSystem.Spacing.md) {
                 // Avatar
                 AvatarView(
@@ -85,7 +85,7 @@ struct MemberDetailSheet: View {
                             .font(.system(size: DesignSystem.IconSize.small))
                             .foregroundColor(DesignSystem.Colors.success)
 
-                        Text(lastStatus.locationName ?? lastStatus.statusType.displayName)
+                        Text(lastStatus.locationName ?? lastStatus.statusType.displayText)
                             .font(DesignSystem.Typography.body(.medium))
 
                         Text("•")

@@ -85,10 +85,12 @@ class AudioPlaybackManager: NSObject, ObservableObject {
         startProgressTimer()
 
         // Track analytics
-        PostHogManager.shared.track(.voiceMessagePlayed, properties: [
-            "message_id": id.uuidString,
-            "duration": duration
-        ])
+        PostHogManager.shared.track(
+            .voiceMessagePlayed(
+                messageID: id.uuidString,
+                duration: duration
+            )
+        )
     }
 
     /// Pause playback
@@ -195,9 +197,9 @@ extension AudioPlaybackManager: AVAudioPlayerDelegate {
             if flag {
                 // Track completion
                 if let id = self.currentlyPlayingID {
-                    PostHogManager.shared.track(.voiceMessageCompleted, properties: [
-                        "message_id": id.uuidString
-                    ])
+                    PostHogManager.shared.track(
+                        .voiceMessageCompleted(messageID: id.uuidString)
+                    )
                 }
 
                 // Play next in queue or stop

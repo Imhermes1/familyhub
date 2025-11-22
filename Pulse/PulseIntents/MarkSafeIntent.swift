@@ -1,3 +1,5 @@
+// Compiled only for the widget/intents extension
+#if WIDGET_EXTENSION
 import Foundation
 import AppIntents
 import WidgetKit
@@ -44,3 +46,4 @@ struct MarkOnTheWayIntent: AppIntent {
         return .result()
     }
 }
+#endif

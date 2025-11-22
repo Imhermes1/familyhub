@@ -247,7 +247,7 @@ class PulseDataManager: ObservableObject {
 
     // MARK: - Tasks
 
-    func addTask(title: String, assignedTo: UUID? = nil) async throws {
+    func addTask(title: String, dueDate: Date? = nil, assignedTo: UUID? = nil) async throws {
         guard let currentUser = currentUser, let currentGroup = currentGroup else {
             throw PulseError.userNotAuthenticated
         }
@@ -256,7 +256,8 @@ class PulseDataManager: ObservableObject {
             groupID: currentGroup.id,
             createdByUserID: currentUser.id,
             assignedToUserID: assignedTo,
-            title: title
+            title: title,
+            dueDate: dueDate
         )
 
         modelContext.insert(task)
@@ -356,11 +357,13 @@ class PulseDataManager: ObservableObject {
                     // }
 
                     // Track analytics
-                    PostHogManager.shared.track(.voiceMessageSent, properties: [
-                        "duration": message.duration,
-                        "has_transcript": message.transcript != nil,
-                        "recipient_count": message.recipientIDs.count
-                    ])
+                    PostHogManager.shared.track(
+                        .voiceMessageSent(
+                            duration: message.duration,
+                            hasTranscript: message.transcript != nil,
+                            recipientCount: message.recipientIDs.count
+                        )
+                    )
                 } catch {
                     message.uploadStatus = .failed
                     try? modelContext.save()
@@ -401,7 +404,7 @@ class PulseDataManager: ObservableObject {
 
         let note = Note(
             groupID: currentGroup.id,
-            createdByID: currentUser.id,
+            userID: currentUser.id,
             content: content
         )
 
@@ -411,9 +414,7 @@ class PulseDataManager: ObservableObject {
 
         // TODO: Sync to Supabase
 
-        PostHogManager.shared.track(.noteCreated, properties: [
-            "content_length": content.count
-        ])
+        PostHogManager.shared.track(.noteCreated(noteType: note.noteTypeRaw))
     }
 
     // MARK: - Sync

@@ -39,8 +39,8 @@ extension View {
         self.padding()
     }
 
-    /// Adds standard section spacing
-    func sectionSpacing() -> some View {
+    /// Adds a smaller section spacing (use DesignSystem.sectionSpacing for primary spacing)
+    func compactSectionSpacing() -> some View {
         self.padding(.vertical, 8)
     }
 

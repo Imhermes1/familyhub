@@ -1,3 +1,5 @@
+// Compiled only for the widget/intents extension
+#if WIDGET_EXTENSION
 import Foundation
 import AppIntents
 import WidgetKit
@@ -19,3 +21,4 @@ struct RefreshPulseIntent: AppIntent {
         return .result()
     }
 }
+#endif

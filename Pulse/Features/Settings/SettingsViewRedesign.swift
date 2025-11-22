@@ -54,7 +54,7 @@ struct SettingsViewRedesign: View {
     // MARK: - Profile Card
 
     private var profileCard: some View {
-        Card.prominent {
+        ProminentCard {
             HStack(spacing: DesignSystem.Spacing.md) {
                 // Avatar
                 AvatarView(
@@ -346,7 +346,7 @@ struct SettingsViewRedesign: View {
             set: { newValue in
                 profile?.bluetoothAutomation = newValue
                 saveSettings()
-                PostHogManager.shared.track(.settingsChanged, properties: [
+                PostHogManager.shared.track("settings_changed", properties: [
                     "setting": "bluetooth_automation",
                     "value": newValue
                 ])
@@ -360,7 +360,7 @@ struct SettingsViewRedesign: View {
             set: { newValue in
                 profile?.geofenceAutomation = newValue
                 saveSettings()
-                PostHogManager.shared.track(.settingsChanged, properties: [
+                PostHogManager.shared.track("settings_changed", properties: [
                     "setting": "geofence_automation",
                     "value": newValue
                 ])
@@ -374,7 +374,7 @@ struct SettingsViewRedesign: View {
             set: { newValue in
                 profile?.hourlyPulse = newValue
                 saveSettings()
-                PostHogManager.shared.track(.settingsChanged, properties: [
+                PostHogManager.shared.track("settings_changed", properties: [
                     "setting": "hourly_pulse",
                     "value": newValue
                 ])
@@ -389,7 +389,7 @@ struct SettingsViewRedesign: View {
                 profile?.manualOnlyMode = newValue
                 saveSettings()
                 HapticManager.shared.impact(.medium)
-                PostHogManager.shared.track(.settingsChanged, properties: [
+                PostHogManager.shared.track("settings_changed", properties: [
                     "setting": "manual_only_mode",
                     "value": newValue
                 ])

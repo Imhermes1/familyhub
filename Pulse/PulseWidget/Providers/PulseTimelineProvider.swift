@@ -34,7 +34,18 @@ struct PulseTimelineProvider: TimelineProvider {
                     date: snapshot.lastUpdated,
                     groupName: snapshot.groupName,
                     memberCount: snapshot.memberCount,
-                    members: snapshot.members,
+                    members: snapshot.members.map {
+                        WidgetMemberStatus(
+                            id: $0.id,
+                            displayName: $0.displayName,
+                            emoji: $0.emoji,
+                            statusType: $0.statusType,
+                            statusText: $0.statusText,
+                            locationName: $0.locationName,
+                            timestamp: $0.timestamp,
+                            minutesAgo: $0.minutesAgo
+                        )
+                    },
                     topTasks: snapshot.topTasks
                 )
             }

@@ -7,7 +7,7 @@ struct PulseWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: PulseTimelineProvider()) { entry in
             PulseWidgetEntryView(entry: entry)
-                .containerBackground(.glass, for: .widget)
+                .containerBackground(.thinMaterial, for: .widget)
         }
         .configurationDisplayName("Pulse")
         .description("Quick access to check-ins and group status")

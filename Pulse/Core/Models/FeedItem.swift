@@ -171,7 +171,7 @@ extension FeedItem {
             id: task.id,
             type: .task(task),
             timestamp: task.completedAt ?? task.dueDate ?? Date(),
-            userID: task.createdByID,
+            userID: task.createdByUserID,
             groupID: task.groupID,
             userName: userName,
             userEmoji: userEmoji
@@ -183,7 +183,7 @@ extension FeedItem {
             id: note.id,
             type: .note(note),
             timestamp: note.createdAt,
-            userID: note.createdByID,
+            userID: note.userID,
             groupID: note.groupID,
             userName: userName,
             userEmoji: userEmoji
@@ -224,12 +224,12 @@ extension Array where Element == FeedItem {
     }
 
     /// Filters by group ID
-    func filtered(by groupID: UUID) -> [FeedItem] {
+    func filteredByGroup(_ groupID: UUID) -> [FeedItem] {
         self.filter { $0.groupID == groupID }
     }
 
     /// Filters by user ID
-    func filtered(by userID: UUID) -> [FeedItem] {
+    func filteredByUser(_ userID: UUID) -> [FeedItem] {
         self.filter { $0.userID == userID }
     }
 

@@ -25,7 +25,7 @@ struct LocationCard: View {
                             .font(DesignSystem.Typography.headline())
 
                         HStack(spacing: 4) {
-                            Text(status.statusType.displayName)
+                        Text(status.statusType.displayText)
                                 .font(DesignSystem.Typography.caption1(.medium))
                                 .foregroundColor(statusColor)
 
@@ -85,7 +85,7 @@ struct LocationCard: View {
             return DesignSystem.Colors.success
         case .leaving:
             return DesignSystem.Colors.warning
-        case .on_the_way:
+        case .onTheWay:
             return DesignSystem.Colors.info
         case .pulse:
             return DesignSystem.Colors.primary
@@ -210,7 +210,7 @@ struct TriggerTypeBadge: View {
             status: PulseStatus(
                 userID: UUID(),
                 groupID: UUID(),
-                statusType: .on_the_way,
+                statusType: .onTheWay,
                 triggerType: .bluetooth,
                 locationName: nil
             ),

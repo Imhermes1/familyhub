@@ -72,9 +72,9 @@ struct NoteCard: View {
                 }
                 .padding(.top, 4)
 
-                // Drawing preview if available
-                if let drawingData = note.drawingData {
-                    DrawingPreview(drawingData: drawingData)
+                // Drawing preview placeholder when note includes a drawing
+                if note.noteType == .drawing {
+                    DrawingPreview()
                         .frame(height: 120)
                         .frame(maxWidth: .infinity)
                         .background(DesignSystem.Colors.tertiaryBackground)
@@ -86,7 +86,7 @@ struct NoteCard: View {
     }
 
     private var noteIcon: String {
-        if note.drawingData != nil {
+        if note.noteType == .drawing {
             return "scribble.variable"
         } else {
             return "note.text"
@@ -104,8 +104,6 @@ struct NoteCard: View {
 // Placeholder for drawing visualization
 
 struct DrawingPreview: View {
-    let drawingData: Data
-
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: DesignSystem.CornerRadius.medium)
@@ -131,9 +129,8 @@ struct DrawingPreview: View {
         NoteCard(
             note: Note(
                 groupID: UUID(),
-                createdByID: UUID(),
-                content: "Don't forget we have a family dinner tomorrow at 7 PM. Please let me know if you can make it!",
-                drawingData: nil
+                userID: UUID(),
+                content: "Don't forget we have a family dinner tomorrow at 7 PM. Please let me know if you can make it!"
             ),
             userName: "Mom",
             userEmoji: "👩"
@@ -142,9 +139,8 @@ struct DrawingPreview: View {
         NoteCard(
             note: Note(
                 groupID: UUID(),
-                createdByID: UUID(),
-                content: "Short note",
-                drawingData: nil
+                userID: UUID(),
+                content: "Short note"
             ),
             userName: "Dad",
             userEmoji: "👨"
@@ -153,9 +149,8 @@ struct DrawingPreview: View {
         NoteCard(
             note: Note(
                 groupID: UUID(),
-                createdByID: UUID(),
-                content: "Here's a quick sketch of the floor plan for the renovation. I think we should expand the kitchen into the dining area and create an open concept space. What do you all think?",
-                drawingData: Data() // Placeholder
+                userID: UUID(),
+                content: "Here's a quick sketch of the floor plan for the renovation. I think we should expand the kitchen into the dining area and create an open concept space. What do you all think?"
             ),
             userName: "Sister",
             userEmoji: "👧"

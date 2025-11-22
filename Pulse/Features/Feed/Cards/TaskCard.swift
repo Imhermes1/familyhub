@@ -131,7 +131,7 @@ struct TaskCard: View {
         TaskCard(
             task: TaskItem(
                 groupID: UUID(),
-                createdByID: UUID(),
+                createdByUserID: UUID(),
                 title: "Buy groceries for dinner tonight",
                 completed: false,
                 dueDate: Calendar.current.date(byAdding: .day, value: 0, to: Date())
@@ -144,7 +144,7 @@ struct TaskCard: View {
         TaskCard(
             task: TaskItem(
                 groupID: UUID(),
-                createdByID: UUID(),
+                createdByUserID: UUID(),
                 title: "Pick up kids from school",
                 completed: true,
                 completedAt: Calendar.current.date(byAdding: .hour, value: -2, to: Date()),
@@ -158,7 +158,7 @@ struct TaskCard: View {
         TaskCard(
             task: TaskItem(
                 groupID: UUID(),
-                createdByID: UUID(),
+                createdByUserID: UUID(),
                 title: "Schedule dentist appointment",
                 completed: false,
                 dueDate: Calendar.current.date(byAdding: .day, value: 3, to: Date())

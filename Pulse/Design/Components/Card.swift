@@ -43,55 +43,50 @@ struct Card<Content: View>: View {
     }
 }
 
-// MARK: - Card Variants
+// MARK: - Card Variants (free functions for type inference)
 
-extension Card {
-    // Prominent card with stronger shadow
-    static func prominent<Content: View>(
-        @ViewBuilder content: () -> Content
-    ) -> Card<Content> {
-        Card(
-            padding: DesignSystem.Spacing.md,
-            cornerRadius: DesignSystem.CornerRadius.large,
-            shadow: DesignSystem.Shadow.prominent,
-            backgroundColor: DesignSystem.Colors.cardBackground,
-            content: content
-        )
-    }
+func ProminentCard<Content: View>(
+    @ViewBuilder content: () -> Content
+) -> some View {
+    Card(
+        padding: DesignSystem.Spacing.md,
+        cornerRadius: DesignSystem.CornerRadius.large,
+        shadow: DesignSystem.Shadow.prominent,
+        backgroundColor: DesignSystem.Colors.cardBackground,
+        content: content
+    )
+}
 
-    // Subtle card with minimal shadow
-    static func subtle<Content: View>(
-        @ViewBuilder content: () -> Content
-    ) -> Card<Content> {
-        Card(
-            padding: DesignSystem.Spacing.md,
-            cornerRadius: DesignSystem.CornerRadius.medium,
-            shadow: DesignSystem.Shadow.subtle,
-            backgroundColor: DesignSystem.Colors.cardBackground,
-            content: content
-        )
-    }
+func SubtleCard<Content: View>(
+    @ViewBuilder content: () -> Content
+) -> some View {
+    Card(
+        padding: DesignSystem.Spacing.md,
+        cornerRadius: DesignSystem.CornerRadius.medium,
+        shadow: DesignSystem.Shadow.subtle,
+        backgroundColor: DesignSystem.Colors.cardBackground,
+        content: content
+    )
+}
 
-    // Bordered card with no shadow
-    static func bordered<Content: View>(
-        borderColor: Color = DesignSystem.Colors.cardBorder,
-        @ViewBuilder content: () -> Content
-    ) -> Card<Content> {
-        Card(
-            padding: DesignSystem.Spacing.md,
-            cornerRadius: DesignSystem.CornerRadius.medium,
-            shadow: DesignSystem.Shadow.ShadowStyle(
-                color: .clear,
-                radius: 0,
-                x: 0,
-                y: 0
-            ),
-            backgroundColor: DesignSystem.Colors.cardBackground,
-            borderColor: borderColor,
-            borderWidth: 1,
-            content: content
-        )
-    }
+func BorderedCard<Content: View>(
+    borderColor: Color = DesignSystem.Colors.cardBorder,
+    @ViewBuilder content: () -> Content
+) -> some View {
+    Card(
+        padding: DesignSystem.Spacing.md,
+        cornerRadius: DesignSystem.CornerRadius.medium,
+        shadow: DesignSystem.Shadow.ShadowStyle(
+            color: .clear,
+            radius: 0,
+            x: 0,
+            y: 0
+        ),
+        backgroundColor: DesignSystem.Colors.cardBackground,
+        borderColor: borderColor,
+        borderWidth: 1,
+        content: content
+    )
 }
 
 // MARK: - Preview
@@ -107,7 +102,7 @@ extension Card {
             }
         }
 
-        Card.prominent {
+        ProminentCard {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Prominent Card")
                     .font(DesignSystem.Typography.headline())
@@ -117,7 +112,7 @@ extension Card {
             }
         }
 
-        Card.bordered() {
+        BorderedCard {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Bordered Card")
                     .font(DesignSystem.Typography.headline())

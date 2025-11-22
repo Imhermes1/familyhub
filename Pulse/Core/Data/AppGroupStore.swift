@@ -127,6 +127,13 @@ struct TaskSnapshot: Codable, Identifiable {
         self.completed = task.completed
         self.assignedTo = nil  // TODO: Add user name lookup
     }
+
+    init(id: UUID, title: String, completed: Bool, assignedTo: String?) {
+        self.id = id
+        self.title = title
+        self.completed = completed
+        self.assignedTo = assignedTo
+    }
 }
 
 // MARK: - Errors

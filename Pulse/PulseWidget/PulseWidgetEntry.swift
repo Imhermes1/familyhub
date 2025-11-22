@@ -1,11 +1,22 @@
 import Foundation
 import WidgetKit
 
+struct WidgetMemberStatus: Identifiable, Equatable {
+    let id: UUID
+    let displayName: String
+    let emoji: String
+    let statusType: String
+    let statusText: String
+    let locationName: String?
+    let timestamp: Date
+    let minutesAgo: Int
+}
+
 struct PulseTimelineEntry: TimelineEntry {
     let date: Date
     let groupName: String
     let memberCount: Int
-    let members: [MemberStatus]
+    let members: [WidgetMemberStatus]
     let topTasks: [TaskSnapshot]
 
     static func preview() -> PulseTimelineEntry {
@@ -14,7 +25,7 @@ struct PulseTimelineEntry: TimelineEntry {
             groupName: "My Family",
             memberCount: 4,
             members: [
-                MemberStatus(
+                WidgetMemberStatus(
                     id: UUID(),
                     displayName: "Mom",
                     emoji: "👩",
@@ -24,7 +35,7 @@ struct PulseTimelineEntry: TimelineEntry {
                     timestamp: Date().addingTimeInterval(-300),
                     minutesAgo: 5
                 ),
-                MemberStatus(
+                WidgetMemberStatus(
                     id: UUID(),
                     displayName: "Dad",
                     emoji: "👨",
@@ -34,7 +45,7 @@ struct PulseTimelineEntry: TimelineEntry {
                     timestamp: Date().addingTimeInterval(-720),
                     minutesAgo: 12
                 ),
-                MemberStatus(
+                WidgetMemberStatus(
                     id: UUID(),
                     displayName: "Sister",
                     emoji: "👧",

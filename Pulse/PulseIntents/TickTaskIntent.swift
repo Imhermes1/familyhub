@@ -1,3 +1,5 @@
+// Compiled only for the widget/intents extension
+#if WIDGET_EXTENSION
 import Foundation
 import AppIntents
 import WidgetKit
@@ -32,3 +34,4 @@ struct TickTaskIntent: AppIntent {
         return .result()
     }
 }
+#endif
